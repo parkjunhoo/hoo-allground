@@ -63,8 +63,8 @@ br::selection{
 }
 
 .shadowText{
-    color:black !important;
-    text-shadow: -1px 0 rgba(255,255,255,.7), 0 1px rgba(255,255,255,.7), 1px 0 rgba(255,255,255,.7), 0 -1px rgba(255,255,255,.7) !important;
+    color:white !important;
+    text-shadow: -1px 0 rgba(0,0,0,.7), 0 1px rgba(0,0,0,.7), 1px 0 rgba(0,0,0,.7), 0 -1px rgba(0,0,0,.7) !important;
     font-weight: 300 !important;
 }
 

@@ -176,7 +176,7 @@
                 <v-card rounded="0" elevation="0" class="transparent"  height="100px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
               </v-col>
               <v-col class="d-flex align-center" cols="9">
-                <p class="subText" style="color:black;">{{i.title}}</p>
+                <p class="subText shadowText" style="color:black;">{{i.title}}</p>
               </v-col>
             </v-row>
           </v-col>

@@ -65,7 +65,7 @@
               <p class="titleText" style="text-align:center;">Who We Are</p>
             </v-col>
             <v-col class="d-flex justify-center" cols="12">
-              <p class="subText">올그라운드는 혁신적은 스포츠 패러다임이라는 명목으로
+              <p class="subText">올그라운드는 혁신적인 스포츠 패러다임이라는 명목으로
                 <br><span class="goaltext">스포츠 산업을 선도하며 가슴이 뛰는 목표를 가지고 있습니다.</span></p>
             </v-col>
             <v-col class="d-flex justify-center" cols="12">
@@ -132,7 +132,7 @@
       </v-img>
     </v-carousel-item>
 
-    <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
+    <!-- <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
       <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.5), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/main/7.jpg">
         <v-container class="d-flex align-center viewContainer">
           <v-row class="align-center justify-center mb-16">
@@ -153,7 +153,7 @@
           </v-row>
         </v-container>
       </v-img>
-    </v-carousel-item>
+    </v-carousel-item> -->
 
 
   </v-carousel>

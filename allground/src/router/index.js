@@ -10,7 +10,7 @@ const routes = [
     name: 'Main',
     component: () => import('../views/Main.vue'),
     beforeEnter: (to,from,next) => {
-      bus.$emit('start:loading'); 
+      bus.$emit('start:loading');
       setTimeout( ()=>{next()},0 );
     },
   },

@@ -26,6 +26,12 @@ app.use(session({
   // }
 }));
 //★★★★★★★★★★★★★★★★★★★★★★★★★★★★//
+app.get("/robots.txt", (req, res) => {
+  res.type("text/plain");
+  res.send(
+    "User-agent: *\nAllow:/"
+  );
+});
 app.use('/api', require('./routes/api'))
 app.use(history());
 app.set('jwt-secret', config.secret)

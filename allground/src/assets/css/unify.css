@@ -1,0 +1,129 @@
+/* 디자인의 통일감을 위한 하나로 합친 CSS 파일 */
+.v-application{
+    line-height:1.2;
+}
+.v-application p{
+    margin-bottom:0;
+}
+.v-carousel__controls__item{
+    margin:0 !important;
+}
+.v-dialog::-webkit-scrollbar {
+    width: 10px !important;
+    
+  }
+  .v-dialog::-webkit-scrollbar-thumb {
+    background-color: green !important;
+    border-radius: 10px !important;
+    background-clip: padding-box !important;
+    border: 2px solid transparent !important;
+  }
+.v-dialog::-webkit-scrollbar-track {
+    background-color: white !important;
+    border-radius: 10px !important;
+    box-shadow: inset 0px 0px 5px white !important;
+}
+.custumCarousel .v-item--active{
+    color:rgba(55,200,55,1) !important;
+}
+@media (max-width:960px){
+    .custumCarousel .v-carousel__controls {
+        opacity:.8;
+    }
+    .custumCarousel .v-carousel__controls > .v-item-group {
+        width:10px;
+    }
+    .custumCarousel .v-btn--icon.v-size--small .v-icon, .v-btn--fab.v-size--small .v-icon {
+        height: 11px !important;
+        width: 11px !important;
+    }
+    .custumCarousel .v-btn--icon.v-size--small {
+        height: 10px;
+        width: 10px;
+    }
+    .mdi-soccer::before {
+        font-size: 13px;
+    }
+}
+
+
+.viewContainer{
+    padding-top:70px;
+    /* padding-right:50px;
+    padding-left:50px; */
+    height:100%;
+    width: 100%;
+}
+
+p::selection{
+    background-color:grey;
+}
+br::selection{
+    background-color:transparent;
+}
+
+.shadowText{
+    color:black !important;
+    text-shadow: -1px 0 rgba(255,255,255,.7), 0 1px rgba(255,255,255,.7), 1px 0 rgba(255,255,255,.7), 0 -1px rgba(255,255,255,.7) !important;
+    font-weight: 300 !important;
+}
+
+
+
+.titleText{
+    font-size:5rem;
+    font-family: 'Russo One', sans-serif;
+    color:white;
+}
+.titleSubText{
+    font-size:2rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:white;
+}
+
+.subText{
+    color:rgba(255,255,255,.75);
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    font-size:1.4rem;
+}
+
+
+@media (max-width:1270px){
+    .subText{
+        font-size:1.2rem;
+    }
+}
+@media (max-width:1000px){
+    .titleText{
+        font-size:3.8rem;
+    }
+    .titleSubText{
+        font-size:1.5rem;
+    }
+    .subText{
+        font-size:1.1rem;
+    }
+}
+@media (max-width:680px){
+    .titleText{
+        font-size:2.8rem;
+    }
+    .titleSubText{
+        font-size:1.5rem;
+    }
+    .subText{
+        font-size:1.1rem;
+    }
+}
+@media (max-width:520px){
+    .titleText{
+    font-size:2rem;
+    }
+    .titleSubText{
+        font-size:1.1rem;
+    }
+    .subText{
+        font-size:.8rem;
+    }
+}

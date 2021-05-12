@@ -1,7 +1,7 @@
 <template>
 <div id="header">
     <v-app-bar
-    height="70"
+    :height="headerHeight"
     color="transparent"
     absolute
     flat
@@ -83,7 +83,17 @@ export default {
     computed:{
         menuList(){
             return this.$store.state.menuList;
-        }
+        },
+        headerHeight(){
+            switch(this.$vuetify.breakpoint.name){
+            case 'xs' : return "30";
+            case 'sm' : return "30";
+            case 'md' : return "60";
+            case 'lg' : return "60";
+            case 'xl' : return "60";
+            default : return "60";
+            }
+        },
     },
     watch:{
         $route(to){

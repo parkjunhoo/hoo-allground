@@ -108,9 +108,11 @@ br::selection{
 
 @media (max-width:600px){
     .viewContainer{
-        padding-bottom:10vh;
+        padding-top:30px;
+        padding-bottom:50px;
         height:100%;
         width: 100%;
+        
     }
 }
 @media (max-width:680px){

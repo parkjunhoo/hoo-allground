@@ -343,10 +343,10 @@ export default {
   mounted(){
     this.preload();
     // this.findBoards();
-      this.$store.commit('set_showTipMessage',false);
-      this.$nextTick(()=>{
-        setTimeout( ()=>{bus.$emit('end:loading')},1000 ); // 로딩이 끝났다는걸 알려주기위한 마운트 된 후 비동기처리 셋타이머 ms인자 500때문에 기본딜레이 500잇음 0하면 페이지 마운트후 로딩) //
-      });
+    this.$store.commit('set_showTipMessage',true);
+    this.$nextTick(()=>{
+      setTimeout( ()=>{bus.$emit('end:loading')},1000 ); // 로딩이 끝났다는걸 알려주기위한 마운트 된 후 비동기처리 셋타이머 ms인자 500때문에 기본딜레이 500잇음 0하면 페이지 마운트후 로딩) //
+    });
   },
   methods:{
     preload(){
@@ -370,12 +370,18 @@ export default {
     carouselTouchDown(){
       if(this.areaFocus) return;
       if(this.carouselIndex===0) return;
-      if(this.carouselIndex<=2) this.carouselIndex--;
+      if(this.carouselIndex<=2){
+        this.$store.commit('set_showTipMessage',false);
+        this.carouselIndex--;
+      }
     },
     carouselTouchUp(){
       if(this.areaFocus) return;
       if(this.carouselIndex===2) return; 
-      if(this.carouselIndex>=0) this.carouselIndex++;
+      if(this.carouselIndex>=0){
+        this.$store.commit('set_showTipMessage',false);
+        this.carouselIndex++;
+      } 
     },
     carouselScroll(e){
       if(this.scrollReady>0)

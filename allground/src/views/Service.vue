@@ -331,12 +331,18 @@ export default {
     carouselTouchDown(){
       if(this.areaFocus) return;
       if(this.carouselIndex===0) return;
-      if(this.carouselIndex<=2) this.carouselIndex--;
+      if(this.carouselIndex<=2){
+        this.$store.commit('set_showTipMessage',false);
+        this.carouselIndex--;
+      } 
     },
     carouselTouchUp(){
       if(this.areaFocus) return;
       if(this.carouselIndex===2) return; 
-      if(this.carouselIndex>=0) this.carouselIndex++;
+      {
+        this.$store.commit('set_showTipMessage',false);
+        if(this.carouselIndex>=0) this.carouselIndex++;
+      }
     },
     carouselScroll(e){
       if(this.scrollReady>0)

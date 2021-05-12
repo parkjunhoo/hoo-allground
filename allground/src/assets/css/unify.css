@@ -105,6 +105,14 @@ br::selection{
         font-size:1.1rem;
     }
 }
+
+@media (max-width:600px){
+    .viewContainer{
+        padding-bottom:10vh;
+        height:100%;
+        width: 100%;
+    }
+}
 @media (max-width:680px){
     .titleText{
         font-size:2.8rem;
@@ -117,6 +125,7 @@ br::selection{
     }
 }
 @media (max-width:520px){
+    
     .titleText{
     font-size:2rem;
     }

@@ -15,7 +15,7 @@
   >
     <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
       <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.1), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/apply/1.jpg">
-        <v-container class="d-flex align-center" style="padding-top:70px; padding-left:25px; padding-right:25px; height:100%;">
+        <v-container class="d-flex align-center viewContainer">
           <v-row class="d-flex justify-center">
             <v-col class="d-flex justify-center" cols="12">
               <p class="titleText" style="text-align:center;"><span style="position:absolute;" class="t"></span>With Us</p>
@@ -39,7 +39,7 @@
 
     <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
       <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.1), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/apply/2.jpg">
-        <v-container class="d-flex align-center" style="padding-top:70px; padding-left:25px; padding-right:25px; height:100%;">
+        <v-container class="d-flex align-center viewContainer">
           <v-row class="d-flex justify-center">
             <v-col class="d-flex justify-center" cols="12">
               <p class="titleText" style="text-align:center;"><span style="position:absolute;" class="t"></span>Marketing Team</p>
@@ -117,7 +117,7 @@
 
     <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
       <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.1), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/apply/3.jpg">
-        <v-container class="d-flex align-center" style="padding-top:70px; padding-left:25px; padding-right:25px; height:100%;">
+        <v-container class="d-flex align-center viewContainer">
           <v-row class="d-flex justify-center">
             <v-col class="d-flex justify-center" cols="12">
               <p class="titleText" style="text-align:center;"><span style="position:absolute;" class="t"></span>Design Team</p>
@@ -193,7 +193,7 @@
 
     <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
       <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.1), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/apply/4.jpg">
-        <v-container class="d-flex align-center" style="padding-top:70px; padding-left:25px; padding-right:25px; height:100%;">
+        <v-container class="d-flex align-center viewContainer">
           <v-row class="d-flex justify-center">
             <v-col class="d-flex justify-center" cols="12">
               <p class="titleText" style="text-align:center;"><span style="position:absolute;" class="t"></span>Development Team</p>
@@ -272,14 +272,14 @@
 
     <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
       <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.1), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/contact/2.jpg">
-        <v-container class="d-flex align-start" style="padding-top:70px; padding-left:25px; padding-right:25px; height:100%;">
-          <v-row class="d-flex justify-center">
+        <v-container class="d-flex align-start viewContainer">
+          <v-row  class="d-flex justify-center">
             <v-col v-if="!this.$vuetify.breakpoint.smAndDown" class="d-flex justify-center" cols="12">
               <p class="titleText ma-0" style="text-align:center;"><span style="position:absolute;" class="t"></span>Apply Mail</p>
             </v-col>
             <v-col cols="12" sm="12" md="12" lg="12" xl="12" >
-              <v-container style="padding-right:10%; padding-left:10%;" class="overflow-hidden">
-                <v-card elevation="0" ref="form" class="pa-3 transparent">
+              <v-container class="overflow-hidden">
+                <v-card elevation="0" ref="form" class="transparent">
                   <v-row>
                     <v-col class="mx-auto"  cols="12" sm="12" md="6" lg="6" xl="6">
                       <v-select ref="team" item-color="black" color="black" v-model="team" :items="selectionTeam" label="지원부서 선택" solo :rules="[rules.requireds]"></v-select>
@@ -307,12 +307,7 @@
                   <v-row>
                     <v-col class="mx-auto"  cols="12" sm="12" md="6" lg="6" xl="6">
                       <v-textarea @focusout="areaFocus=false;" @focus="typing" ref="contents"  height="75" solo placeholder="내용" v-model="contents" :rules="[rules.required]"></v-textarea>
-                    </v-col>
-                  </v-row>
-
-                  <v-row>
-                    <v-col class="mx-auto d-flex justify-center"  cols="12" sm="12" md="6" lg="6" xl="6">
-                      <v-btn outlined color="white" @click="submit"><p>메일 보내기</p></v-btn>
+                      <v-btn style="width:100%" outlined color="white" @click="submit"><p>메일 보내기</p></v-btn>
                     </v-col>
                   </v-row>
                 </v-card>

@@ -29,7 +29,7 @@ app.use(session({
 app.get("/robots.txt", (req, res) => {
   res.type("text/plain");
   res.send(
-    "User-agent: *\nAllow:/"
+    "User-agent: *\nDisallow: /admin/\nDisallow: /login/\n"
   );
 });
 app.use('/api', require('./routes/api'))

@@ -39,17 +39,24 @@
             <v-col data-aos-delay="500" data-aos="fade-up" class="d-flex justify-center" cols="12">
               <p class="titleSubText" style="font-family: 'Courgette', cursive;">If you do nothing,<br v-if="this.$vuetify.breakpoint.smAndDown">nothing will happen</p>
             </v-col>
-            <v-col data-aos-delay="500" data-aos="fade-up" class="d-flex justify-center" cols="12">
+            <!-- <v-col data-aos-delay="500" data-aos="fade-up" class="d-flex justify-center" cols="12">
               <v-btn to="/about" class="mt-5" outlined>MORE ABOUT ALLGROUND</v-btn>
-            </v-col>
-             <v-col data-aos-delay="500" data-aos="fade-up" class="d-flex justify-center" cols="12">
-              <v-icon x-large>mdi-minus</v-icon>
-            </v-col>
-            <v-col data-aos-delay="500" data-aos="fade-up" class="d-flex justify-center" cols="12">
+            </v-col> -->
+            <v-col data-aos-delay="500" data-aos="fade-up" class="d-flex justify-center mt-3" cols="12">
               <p class="subText">스포츠, 그 이상의 가치를 만들고 있습니다.<br></p>
             </v-col>
-            <v-col data-aos-delay="1000" data-aos="fade-up" class="d-flex justify-center" cols="12">
+            <v-col data-aos-delay="1000" data-aos="fade-up" class="d-flex justify-center mt-1" cols="12">
               <p class="subText">스포츠 에이전시, 스포츠 플랫폼, 스포츠 브랜드의 시장 활성화를 통해<br>스포츠산업을 선도하여 선한 영향력을 발휘하겠습니다.</p>
+            </v-col>
+            <v-col data-aos-delay="1000" data-aos="fade-up" class="d-flex justify-center" cols="12">
+              <v-icon x-large>mdi-minus</v-icon>
+            </v-col>
+            <v-col data-aos-delay="1500" data-aos="fade-up" class="d-flex justify-center" cols="12">
+              <v-card elevation="0" class="d-flex transparent">
+                <a href="https://www.facebook.com/Alldayfootballer/"><v-img class="mx-3" height="30px" width="30px" contain src="@/assets/main/sns/facebook.png"></v-img></a>
+                <a href="https://www.instagram.com/allground.official/"><v-img class="mx-3" height="30px" width="30px" contain src="@/assets/main/sns/instagram.png"></v-img></a>
+                <a href="https://blog.naver.com/alldayfootball"><v-img class="mx-3" height="30px" width="30px" contain src="@/assets/main/sns/blog.png"></v-img></a>
+              </v-card>
             </v-col>
           </v-row>
         </v-container>
@@ -132,7 +139,7 @@
       </v-img>
     </v-carousel-item>
 
-    <!-- <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
+    <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
       <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.5), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/main/7.jpg">
         <v-container class="d-flex align-center viewContainer">
           <v-row class="align-center justify-center mb-16">
@@ -140,20 +147,17 @@
               <p class="titleText" style="margin-bottom:5vh;">MOU</p>
             </v-col>
             <v-col class="d-flex justify-center" style="margin-bottom:150px" cols="12">
-              <div class="d-flex align-center" :style="width=mobileFlowSlide" style="position:absolute; overflow:hidden; height:150px; background-color:white;">
-                <div class="transparent d-flex" style="position:relative; width:1000px;">
-                  <v-card rounded="0" elevation="0" class="flow white" v-for="i in mouImg" :key="i.src"  height="70px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
-                  <v-card rounded="0" elevation="0" class="flow white" v-for="i in mouImg" :key="i.title"  height="70px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
+              <div class="d-flex align-center" :style="width=mobileFlowSlide" style="position:absolute; overflow:hidden; height:150px; background-color:transparent;">
+                <div  @click="dialog=true" class="transparent d-flex" style="position:relative; width:1000px;">
+                  <v-card rounded="0" elevation="0" class="flow transparent px-5" v-for="i in mouImg" :key="i.src"  height="70px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
+                  <v-card rounded="0" elevation="0" class="flow transparent px-5" v-for="i in mouImg" :key="i.title"  height="70px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
                 </div>
               </div>
-            </v-col>
-            <v-col class="justify-center align-center d-flex" cols="12">
-              <v-btn @click="dialog=true">전체보기</v-btn>
             </v-col>
           </v-row>
         </v-container>
       </v-img>
-    </v-carousel-item> -->
+    </v-carousel-item>
 
 
   </v-carousel>
@@ -162,7 +166,7 @@
   </v-container> -->
       <v-dialog v-model="dialog" width="100%" height="100%">
       <div class="d-flex align-center" style="background-color:rgba(55,100,55,1);">
-        <p class="titleSubText">MOU</p>
+        <p class="titleSubText">올그라운드와 함께하는 기업</p>
         <v-spacer></v-spacer>
       <v-btn @click="dialog=false" icon>
         <v-icon style="color:white;">mdi-export</v-icon>
@@ -173,7 +177,7 @@
           <v-col v-for="i in mouImg" :key="i.title" class="d-flex align-center" cols="12" sm="12" md="6" lg="6" xl="6">
             <v-row>
               <v-col cols="3">
-                <v-card rounded="0" elevation="0" class="transparent"  height="100px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
+                <v-card rounded="0"  elevation="0" class="transparent"  height="100px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
               </v-col>
               <v-col class="d-flex align-center" cols="9">
                 <p class="subText shadowText" style="color:black;">{{i.title}}</p>
@@ -204,7 +208,7 @@ export default {
         {src:require('@/assets/main/mou/카나스포츠.png'),title:'KANA 스프츠협회',link:'https://www.facebook.com/Kana-Acad%C3%A9mie-Jeunesse-Sportive-de-Sanoyah-118049230036779/'},
         {src:require('@/assets/main/mou/킹슬리스포츠.png'),title:'킹슬리 스포츠',link:'https://en.kingsleysports.com/'},
         {src:require('@/assets/main/mou/탈렌티로고.png'),title:'TFG',link:'https://www.talentifuorigioco.it/'},
-        {src:require('@/assets/main/mou/풋볼아웃라인.jpg'),title:'풋볼아웃라인',link:'https://www.instagram.com/football_outline/?hl=ko'},
+        {src:require('@/assets/main/mou/풋볼아웃라인.png'),title:'풋볼아웃라인',link:'https://www.instagram.com/football_outline/?hl=ko'},
       ],
       preloadImg:[
         require('@/assets/main/1.jpg'),
@@ -226,6 +230,9 @@ export default {
         require('@/assets/main/mou/풋볼아웃라인.jpg'),
       ]
     }
+  },
+  created(){
+    this.preload();
   },
   mounted(){
     this.$store.commit('set_showTipMessage',true);
@@ -289,7 +296,7 @@ export default {
     carouselTouchDown(){
       if(this.areaFocus) return;
       if(this.carouselIndex===0) return;
-      if(this.carouselIndex<=4)
+      if(this.carouselIndex<=5)
       { 
         this.$store.commit('set_showTipMessage',false);
         this.carouselIndex--;
@@ -297,7 +304,7 @@ export default {
     },
     carouselTouchUp(){
       if(this.areaFocus) return;
-      if(this.carouselIndex===4) return; 
+      if(this.carouselIndex===5) return; 
       if(this.carouselIndex>=0) 
       {
         this.$store.commit('set_showTipMessage',false);
@@ -313,7 +320,7 @@ export default {
           this.scrollReady=0;
         }
         else{
-          if(this.carouselIndex!=4)
+          if(this.carouselIndex!=5)
           {
           this.carouselIndex++;
           this.scrollReady=0;

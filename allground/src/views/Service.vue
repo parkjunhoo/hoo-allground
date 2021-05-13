@@ -200,6 +200,9 @@ export default {
       ],
     }
   },
+  created(){
+    this.preload();
+  },
   mounted(){
     this.preload();
     this.$store.commit('set_showTipMessage',true);

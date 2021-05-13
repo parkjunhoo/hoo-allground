@@ -340,8 +340,10 @@ export default {
       }
     },
   },
-  mounted(){
+  created(){
     this.preload();
+  },
+  mounted(){
     // this.findBoards();
     this.$store.commit('set_showTipMessage',true);
     this.$nextTick(()=>{

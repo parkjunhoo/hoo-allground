@@ -2,13 +2,12 @@
 <!-- 로딩할때 나오는 페이지임!! 여기를 조정하면 로딩을 커스텀 삽가눙 ㅇㅅㅇ  -->
 <div v-show="loading">
   <v-overlay color="black" opacity=".8">
-        
-        <v-card elevation="0" width="100px" height="100px" color="transparent">
-          <v-card id="aftercard" style="position:absolute;" width="100%" height="100%" class="d-flex justify-center overflow-y-hidden align-slef-end" elevation="0" color="transparent">
-          <img src="@/assets/logo/animationlogo.gif" id="gif" height="50px">
-          </v-card>
-          <!-- <div style="position:absolute;" class="t"></div> -->
-        </v-card>
+    <v-card elevation="0" width="100px" height="100px" color="transparent">
+      <v-card id="aftercard" style="position:absolute;" width="100%" height="100%" class="d-flex justify-center overflow-y-hidden align-slef-end" elevation="0" color="transparent">
+      <img src="@/assets/logo/animationlogo_resize.gif" id="gif" height="50px">
+      </v-card>
+      <!-- <div style="position:absolute;" class="t"></div> -->
+    </v-card>
   </v-overlay>
 </div>
 </template>

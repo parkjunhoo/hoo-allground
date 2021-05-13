@@ -139,11 +139,17 @@
             <v-col class="d-flex justify-center" cols="12">
               <p class="titleText" style="margin-bottom:5vh;">MOU</p>
             </v-col>
-            <v-col class="d-flex justify-center" style="height:150px;" cols="12">
-              <div class="d-flex align-center" :style="width=mobileFlowSlide" style="position:absolute; overflow:hidden; height:150px; background-color:transparent;">
-                <div  @click="dialog=true" class="transparent d-flex" style="position:relative; width:1000px; height:150px;">
-                  <v-card rounded="0" elevation="0" class="flow transparent px-5" v-for="i in mouImg" :key="i.src"  height="70px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
-                  <v-card rounded="0" elevation="0" class="flow transparent px-5" v-for="i in mouImg" :key="i.title"  height="70px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
+            <v-col cols="12" class="pa-0" style="position:relative;">
+              <div @click="dialog=true" style="height:70px; width:100%; position:absolute; left:0; cursor:zoom-in;">
+                <div class="d-flex mx-auto" style="height:70px; width:1000px; overflow:hidden;">
+                    <v-img class="flow" width="70px" height="70px" style="margin: 0 15px;" contain v-for="i in mouImg" :key="i" :src="i"></v-img>
+                    <v-img class="flow" width="70px" height="70px" style="margin: 0 15px;" contain v-for="i in mouImg" :key="i" :src="i"></v-img>
+                  <!-- <v-card class="flow d-flex justify-center align-center transparent px-2" style="margin:0 10px;" 
+                  elevation="0" v-for="i in mouImg" :key="i" height="70px" width="80px">
+                    <v-img width="70%" height="100%" contain :src="i"></v-img></v-card> -->
+                  <!-- <v-card class="flow d-flex justify-center align-center transparent px-2" style="margin:0 10px;" 
+                  elevation="0" v-for="i in mouImg" :key="i" height="70px" width="80px">
+                    <v-img  width="70%" height="100%" contain :src="i"></v-img></v-card> -->
                 </div>
               </div>
             </v-col>
@@ -338,7 +344,7 @@ export default {
 }
 @keyframes f {
   0%{
-    left:0%;
+    left:0vw;
   }
   100%{
     left:-100%;

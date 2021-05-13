@@ -42,20 +42,20 @@
             <!-- <v-col data-aos-delay="500" data-aos="fade-up" class="d-flex justify-center" cols="12">
               <v-btn to="/about" class="mt-5" outlined>MORE ABOUT ALLGROUND</v-btn>
             </v-col> -->
-            <v-col data-aos-delay="500" data-aos="fade-up" class="d-flex justify-center mt-3" cols="12">
+            <v-col data-aos-delay="1000" data-aos="fade-up" class="d-flex justify-center" cols="12">
+              <v-icon large>mdi-minus</v-icon>
+            </v-col>
+            <v-col data-aos-delay="1000" data-aos="fade-up" class="d-flex justify-center" cols="12">
               <p class="subText">스포츠, 그 이상의 가치를 만들고 있습니다.<br></p>
             </v-col>
             <v-col data-aos-delay="1000" data-aos="fade-up" class="d-flex justify-center mt-1" cols="12">
               <p class="subText">스포츠 에이전시, 스포츠 플랫폼, 스포츠 브랜드의 시장 활성화를 통해<br>스포츠산업을 선도하여 선한 영향력을 발휘하겠습니다.</p>
             </v-col>
-            <v-col data-aos-delay="1000" data-aos="fade-up" class="d-flex justify-center" cols="12">
-              <v-icon x-large>mdi-minus</v-icon>
-            </v-col>
-            <v-col data-aos-delay="1500" data-aos="fade-up" class="d-flex justify-center" cols="12">
+            <v-col data-aos-delay="1500" data-aos="fade-up" class="d-flex justify-center mt-15" cols="12">
               <v-card elevation="0" class="d-flex transparent">
-                <a href="https://www.facebook.com/Alldayfootballer/"><v-img class="mx-3" height="30px" width="30px" contain src="@/assets/main/sns/facebook.png"></v-img></a>
-                <a href="https://www.instagram.com/allground.official/"><v-img class="mx-3" height="30px" width="30px" contain src="@/assets/main/sns/instagram.png"></v-img></a>
-                <a href="https://blog.naver.com/alldayfootball"><v-img class="mx-3" height="30px" width="30px" contain src="@/assets/main/sns/blog.png"></v-img></a>
+                <a href="https://www.facebook.com/Alldayfootballer/" target="_blank"><v-img class="mx-3" height="25px" width="25px" contain src="@/assets/main/sns/facebook.png"></v-img></a>
+                <a href="https://www.instagram.com/allground.official/" target="_blank"><v-img class="mx-3" height="25px" width="25px" contain src="@/assets/main/sns/instagram.png"></v-img></a>
+                <a href="https://blog.naver.com/alldayfootball" target="_blank"><v-img class="mx-3" height="25px" width="25px" contain src="@/assets/main/sns/blog.png"></v-img></a>
               </v-card>
             </v-col>
           </v-row>

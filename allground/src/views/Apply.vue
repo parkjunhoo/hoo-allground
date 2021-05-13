@@ -479,7 +479,7 @@ export default {
   },
   methods:{
     carouselScroll(e){
-      if(e.path[0].placeholder ==='내용') return;
+      if(this.areaFocus) return;
       if(this.scrollReady>0)
       {
         this.$store.commit('set_showTipMessage',false);
@@ -497,9 +497,6 @@ export default {
       }
       else this.scrollReady++;
     },
-    typing(e){
-      this.areaFocus = e.isTrusted;
-    },
     carouselTouchDown(){
       if(this.areaFocus) return;
       if(this.carouselIndex===0) return;
@@ -515,6 +512,9 @@ export default {
         this.carouselIndex++;
         this.$store.commit('set_showTipMessage',false);
       } 
+    },
+    typing(e){
+      this.areaFocus = e.isTrusted;
     },
     preload(){
       for(var i = 0; i<this.preloadImg.length; i++)

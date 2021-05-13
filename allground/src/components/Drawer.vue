@@ -35,6 +35,15 @@
             <v-list-item-title class="Font">{{ item.name }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item class="d-flex justify-center">
+          <v-card elevation="0" class="d-flex transparent">
+            <a href="https://www.facebook.com/Alldayfootballer/" target="_blank"><v-img class="mx-3" height="20px" width="20px" contain src="@/assets/main/sns/facebook.png"></v-img></a>
+            <v-divider style="background-color:white; opacity:.2;" vertical></v-divider>
+            <a href="https://www.instagram.com/allground.official/" target="_blank"><v-img class="mx-3" height="20px" width="20px" contain src="@/assets/main/sns/instagram.png"></v-img></a>
+            <v-divider style="background-color:white; opacity:.2;" vertical></v-divider>
+            <a href="https://blog.naver.com/alldayfootball" target="_blank"><v-img class="mx-3" height="20px" width="20px" contain src="@/assets/main/sns/blog.png"></v-img></a>
+        </v-card>
+        </v-list-item>
       </v-list>
     <!-- 메뉴 부분 ㅇㅅㅇ -->
     </v-navigation-drawer>

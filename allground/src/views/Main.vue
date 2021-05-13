@@ -39,9 +39,9 @@
             <v-col data-aos-delay="500" data-aos="fade-up" class="d-flex justify-center" cols="12">
               <p class="titleSubText" style="font-family: 'Courgette', cursive;">If you do nothing,<br v-if="this.$vuetify.breakpoint.smAndDown">nothing will happen</p>
             </v-col>
-            <!-- <v-col data-aos-delay="500" data-aos="fade-up" class="d-flex justify-center" cols="12">
+            <v-col data-aos-delay="700" data-aos="fade-up" class="d-flex justify-center" cols="12">
               <v-btn to="/about" class="mt-5" outlined>MORE ABOUT ALLGROUND</v-btn>
-            </v-col> -->
+            </v-col>
             <v-col data-aos-delay="1000" data-aos="fade-up" class="d-flex justify-center" cols="12">
               <v-icon large>mdi-minus</v-icon>
             </v-col>
@@ -50,13 +50,6 @@
             </v-col>
             <v-col data-aos-delay="1000" data-aos="fade-up" class="d-flex justify-center mt-1" cols="12">
               <p class="subText">스포츠 에이전시, 스포츠 플랫폼, 스포츠 브랜드의 시장 활성화를 통해<br>스포츠산업을 선도하여 선한 영향력을 발휘하겠습니다.</p>
-            </v-col>
-            <v-col data-aos-delay="1500" data-aos="fade-up" class="d-flex justify-center mt-15" cols="12">
-              <v-card elevation="0" class="d-flex transparent">
-                <a href="https://www.facebook.com/Alldayfootballer/" target="_blank"><v-img class="mx-3" height="25px" width="25px" contain src="@/assets/main/sns/facebook.png"></v-img></a>
-                <a href="https://www.instagram.com/allground.official/" target="_blank"><v-img class="mx-3" height="25px" width="25px" contain src="@/assets/main/sns/instagram.png"></v-img></a>
-                <a href="https://blog.naver.com/alldayfootball" target="_blank"><v-img class="mx-3" height="25px" width="25px" contain src="@/assets/main/sns/blog.png"></v-img></a>
-              </v-card>
             </v-col>
           </v-row>
         </v-container>
@@ -129,7 +122,7 @@
               <p class="titleText"><span style="position:absolute;" class="t"></span>Contact Us</p>
             </v-col>
             <v-col class="d-flex justify-center" cols="12">
-              <p class="subText">올그라운드는 성공적인 비지니스를 위해<br v-if="this.$vuetify.breakpoint.smAndDown === true">‘당신의 소중한의견과 제안’을 받습니다. </p>
+              <p class="subText">올그라운드는 성공적인 비지니스를 위해 <br v-if="this.$vuetify.breakpoint.smAndDown === true">‘당신의 소중한 의견과 제안’ 을 받습니다. </p>
             </v-col>
             <v-col class="d-flex justify-center" cols="12">
               <v-btn large outlined to="/contact" elevation="10"><p>Contact</p></v-btn>
@@ -146,9 +139,9 @@
             <v-col class="d-flex justify-center" cols="12">
               <p class="titleText" style="margin-bottom:5vh;">MOU</p>
             </v-col>
-            <v-col class="d-flex justify-center" style="margin-bottom:150px" cols="12">
+            <v-col class="d-flex justify-center" style="height:150px;" cols="12">
               <div class="d-flex align-center" :style="width=mobileFlowSlide" style="position:absolute; overflow:hidden; height:150px; background-color:transparent;">
-                <div  @click="dialog=true" class="transparent d-flex" style="position:relative; width:1000px;">
+                <div  @click="dialog=true" class="transparent d-flex" style="position:relative; width:1000px; height:150px;">
                   <v-card rounded="0" elevation="0" class="flow transparent px-5" v-for="i in mouImg" :key="i.src"  height="70px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
                   <v-card rounded="0" elevation="0" class="flow transparent px-5" v-for="i in mouImg" :key="i.title"  height="70px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
                 </div>
@@ -341,7 +334,7 @@ export default {
   }
 }
 .flow{
-  animation: f 10s linear infinite;
+  animation: f 30s linear infinite;
 }
 @keyframes f {
   0%{

@@ -7,9 +7,9 @@
     flat
     style="z-index:5;"
     >
-        <v-row class="d-flex">
+        <v-row class="d-flex align-center">
             <v-col class="d-flex align-center" cols="auto">
-                <router-link to="/"><v-card :ripple="false" class="transparent" elevation="0" width="150" height="50"><v-img contain width="100%" height="100%" src="@/assets/logo/white_wide_logo.png" ></v-img></v-card></router-link>
+                <router-link to="/"><v-card :ripple="false" class="transparent" elevation="0" :width="logoWidth" :height="logoHegiht"><v-img contain width="100%" height="100%" src="@/assets/logo/white_wide_logo_resize.png" ></v-img></v-card></router-link>
             </v-col>
             <v-spacer></v-spacer>
             <v-col v-if="!this.$vuetify.breakpoint.smAndDown" cols="auto">
@@ -21,17 +21,26 @@
                     </v-tab>
                 </v-tabs>
             </v-col>
+            <v-spacer></v-spacer>
+            <v-col class="pa-0" cols="auto" v-if="!this.$vuetify.breakpoint.mdAndDown">
+                <v-card elevation="0" class="d-flex transparent">
+                <a href="https://www.facebook.com/Alldayfootballer/" target="_blank"><v-img class="mx-3" height="20px" width="20px" contain src="@/assets/main/sns/facebook.png"></v-img></a>
+                <v-divider style="background-color:white; opacity:.2;" vertical></v-divider>
+                <a href="https://www.instagram.com/allground.official/" target="_blank"><v-img class="mx-3" height="20px" width="20px" contain src="@/assets/main/sns/instagram.png"></v-img></a>
+                <v-divider style="background-color:white; opacity:.2;" vertical></v-divider>
+                <a href="https://blog.naver.com/alldayfootball" target="_blank"><v-img class="mx-3" height="20px" width="20px" contain src="@/assets/main/sns/blog.png"></v-img></a>
+              </v-card>
+            </v-col>
             <v-col v-if="this.$vuetify.breakpoint.smAndDown" cols="auto">
                 <v-app-bar-nav-icon color="white" @click="OpenDrawer"></v-app-bar-nav-icon>
             </v-col>
-            <v-spacer v-if="!this.$vuetify.breakpoint.smAndDown"></v-spacer>
             <!-- <v-col v-if="!this.$vuetify.breakpoint.smAndDown" cols="auto" class="d-flex align-center">
                 <p class="headerTitle">LANGUAGE</p>
             </v-col>  -->
             <!-- <v-col v-if="!this.$vuetify.breakpoint.smAndDown" cols="auto" class="d-flex align-center">
                 <div style="background-color:transparent;" id="google_translate_element" class="hd_lang"></div>
             </v-col> -->
-            <hr style="background-color:white; opacity:.5; position:absolute; width:100%; left:0px; top:100%; height:1px;">
+            <hr style="background-color:white; opacity:.3; position:absolute; width:100%; left:0px; top:100%; height:1px;">
         </v-row>
     </v-app-bar>
 </div>
@@ -85,6 +94,26 @@ export default {
             return this.$store.state.menuList;
         },
         headerHeight(){
+            switch(this.$vuetify.breakpoint.name){
+            case 'xs' : return "35";
+            case 'sm' : return "35";
+            case 'md' : return "60";
+            case 'lg' : return "60";
+            case 'xl' : return "60";
+            default : return "60";
+            }
+        },
+        logoWidth(){
+            switch(this.$vuetify.breakpoint.name){
+            case 'xs' : return "120";
+            case 'sm' : return "150";
+            case 'md' : return "150";
+            case 'lg' : return "150";
+            case 'xl' : return "150";
+            default : return "150";
+            }
+        },
+        logoHegiht(){
             switch(this.$vuetify.breakpoint.name){
             case 'xs' : return "30";
             case 'sm' : return "30";

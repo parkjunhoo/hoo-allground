@@ -55,28 +55,48 @@
     <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
       <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.5), rgba(0,0,0,1)" width="100%" height="100%" position="left top" src="@/assets/about/2.png">
         <v-container class="d-flex align-center viewContainer">
-          <v-row no-gutters class="align-center justify-center">
-            <v-col cols="2" v-if="!this.$vuetify.breakpoint.smAndDown"><v-spacer></v-spacer></v-col>
-            <v-col class="d-flex justify-center mb-6 removeMargin" cols="10"> 
-              <p class="titleText" style="text-align:center;"><span style="position:absolute;" class="t"></span>CEO Greeting</p>
+          <v-row no-gutters class="d-flex align-center justify-center">
+            <v-col class="d-flex justify-center" cols="12"> 
+              <p class="titleText">CEO Greeting</p>
             </v-col>
-            <v-col class="d-flex" cols="auto">
-              <v-card :width="photoBreakPoint" :height="photoBreakPoint" elevation="0" class="transparent" ><v-img contain src="@/assets/about/대표님.png"></v-img></v-card>
+            <v-col class="d-flex align-center" cols="auto">
+              <v-img :width="photoBreakPoint" :height="photoBreakPoint" contain src="@/assets/about/대표님.png"></v-img>
             </v-col>
             <v-col cols="12" sm="12" lg="8" xl="auto" class="d-flex justify-center mt-6 removeMargin">
-              <v-card :width="pWitdh" elevation="0" color="rgba(0,0,0,.0">
-               <p style="text-align:left;" class="subText">현 시대의 선수들은 좋은팀에서 운동할 권리가 있습니다.
+              <v-card v-if="!this.$vuetify.breakpoint.xs" elevation="0" color="rgba(0,0,0,.0">
+               <p style="text-align:left;" class="subText">
+                  현 시대의 선수들은 좋은팀에서 운동할 권리가 있습니다.
                   <br>하지만, 많은 선수들이 다양한 사회적요소에 의해 입단이 어려운 실정입니다.
-                  <br><br>특히 미디어의 상용화가 되지 않은 국내 하부리그의 선수들은 좋은 선수임에도 불구하고 단지 검증되지 않았다는
-                  <br v-if="this.$vuetify.breakpoint.smAndDown === false">이유 하나로 좋은팀으로 갈 수 있는 기회를 박탈당하고 있습니다. 이런 어려움을 조금이나마 해결해 주고자
-                  <br v-if="this.$vuetify.breakpoint.smAndDown === false">올데이풋볼은 구단과 선수를 최적으로 연결해 주는 플랫폼을 개발, 지속적으로 서비스를 제공하고 있습니다.
-                  <br><br>첫 시작 아래 결심한 신념은 "선수들의 의한 선수들을 위한 일" 입니다.
-                  <br v-if="this.$vuetify.breakpoint.smAndDown === false">여러분, 설레는 마음으로 올데이풋볼을 방문해 주십시오, 여러분이 어떤 구단을 원하던 그 구단을 올데이풋볼에서
+                  <br v-if="!this.$vuetify.breakpoint.smAndDown"><br>특히 미디어의 상용화가 되지 않은 국내 하부리그의 선수들은 좋은 선수임에도
+                  <br>불구하고 단지 검증되지 않았다는 이유 하나로 좋은팀으로 갈 수 있는
+                  <br v-if="!this.$vuetify.breakpoint.smAndDown"><br>기회를 박탈당하고 있습니다. 이런 어려움을 조금이나마 해결해 주고자
+                  <br>올그라운드는 구단과 선수를 최적으로 해결해 주는 플랫폼을 개발,
+                  <br v-if="!this.$vuetify.breakpoint.smAndDown"><br>지속적으로 서비스를 제공하고 있습니다.
+                  <br v-if="!this.$vuetify.breakpoint.smAndDown"><br>첫 시작 아래 결심한 신념은 "선수들의 의한 선수들을 위한 일"입니다.
+                  <br>여러분, 설레는 마음으로 올그라운드를 방문해 주십시오.
+                  <br v-if="!this.$vuetify.breakpoint.smAndDown"><br>여러분이 어떤 구단을 원하던 그 구단을 올그라운드에서
                   <br>쉽고, 즐겁게 찾을 수 있도록 다양한 서비스를 선보이겠습니다.
-                  <br><br>여러분이 찾는 구단을 올데이풋볼에서 기다리고 있습니다.
+                  <br v-if="!this.$vuetify.breakpoint.smAndDown"><br>여러분이 찾는 구단을 올그라운드에서 기다리고 있습니다.
                   <br><span><p class="signText">CEO 이학진</p></span>
                 </p>
               </v-card>
+              <div @touchend="moveOk" @touchstart="moveNo" class="scrollDiv" style="height:50vh; width:88%;" v-if="this.$vuetify.breakpoint.xs" elevation="0" color="rgba(0,0,0,.0">
+               <p style="text-align:left;" class="subText">
+                  현 시대의 선수들은 좋은팀에서 운동할 권리가 있습니다.
+                  <br>하지만, 많은 선수들이 다양한 사회적요소에 의해 입단이 어려운 실정입니다.
+                  <br><br>특히 미디어의 상용화가 되지 않은 국내 하부리그의 선수들은 좋은 선수임에도
+                  <br>불구하고 단지 검증되지 않았다는 이유 하나로 좋은팀으로 갈 수 있는
+                  <br><br>기회를 박탈당하고 있습니다. 이런 어려움을 조금이나마 해결해 주고자
+                  <br>올그라운드는 구단과 선수를 최적으로 해결해 주는 플랫폼을 개발,
+                  <br><br>지속적으로 서비스를 제공하고 있습니다.
+                  <br><br>첫 시작 아래 결심한 신념은 "선수들의 의한 선수들을 위한 일"입니다.
+                  <br>여러분, 설레는 마음으로 올그라운드를 방문해 주십시오.
+                  <br><br>여러분이 어떤 구단을 원하던 그 구단을 올그라운드에서
+                  <br>쉽고, 즐겁게 찾을 수 있도록 다양한 서비스를 선보이겠습니다.
+                  <br><br>여러분이 찾는 구단을 올그라운드에서 기다리고 있습니다.
+                  <br><span><p class="signText">CEO 이학진</p></span>
+                </p>
+              </div>
             </v-col>
           </v-row>
         </v-container>
@@ -191,6 +211,7 @@ import bus from '@/utils/bus.js'
 export default {
   data(){
     return{
+      dontMove:false,
       carouselIndex:0,
       scrollReady:2,
         preloadImg:[
@@ -214,6 +235,12 @@ export default {
     });
   },
   methods:{
+    moveNo(){
+      this.areaFocus=true;
+    },
+    moveOk(){
+      setTimeout(()=>{this.areaFocus=false},0);
+    },
     preload(){
       for(var i = 0; i<this.preloadImg.length; i++)
       {
@@ -339,7 +366,7 @@ export default {
 .subText {
   word-spacing: 3px;
 }
-@media (max-width:1000px){
+@media (max-width:1300px){
   .signText{
     font-size:3.7rem;
   }

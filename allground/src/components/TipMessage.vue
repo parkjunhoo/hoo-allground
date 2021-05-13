@@ -43,11 +43,11 @@ export default {
 }
 @keyframes swiping{
     0%{
-        top:0%;
+        top:-10%;
         opacity:0;
     }
     100%{
-        top:30%;
+        top:-50%;
         opacity:1;
     }
 }

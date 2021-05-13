@@ -50,7 +50,7 @@
 
     <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
       <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.5), rgba(0,0,0,1)" width="100%" height="100%" position="center top" cover src="@/assets/service/2.jpg">
-        <v-container class="d-flex align-center " style="padding-top:70px; height:100%;">
+        <v-container class="d-flex align-center viewContainer">
           <v-row class="align-center" justify="center">
 
             <v-col class="d-flex justify-center pb-0 mt-2" cols="12">
@@ -103,7 +103,7 @@
 
     <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
       <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.5), rgba(0,0,0,1)" width="100%" height="100%" position="center top" cover src="@/assets/service/2.jpg">
-        <v-container class="d-flex align-center " style="padding-top:70px; height:100%;">
+        <v-container class="d-flex align-center viewContainer">
           <v-row class="align-center" justify="center">
 
             <v-col class="d-flex justify-center" cols="12">

@@ -27,7 +27,6 @@
         v-on="on"
       >Next slide</v-btn>
     </template> -->
-
 <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
   <v-container class="viewContainer d-flex justify-center">
     <v-card color="black" :width="newsPageContainer" style="padding-bottom:10vh;">
@@ -38,21 +37,19 @@
           </p>
         </v-col>
         <v-col style="position:absolute;" class="d-flex justify-end mt-16" cols="12">
-          <p class="newSubText">2021.02.23</p>
+          <p class="newsSubText">2021.02.23</p>
         </v-col>
         <v-col cols="12">
           <v-card elevation="0" color="transparent">
             <v-img class="mx-auto" height="50vh" contain src="https://cdn.epnc.co.kr/news/photo/202102/201905_201769_347.jpg"></v-img>
             <p style="text-align:left;" class="newSubText mt-10">
-              현재 베타서비스를 운영중인 축구선수 스카우팅 플랫폼 ‘올데이풋볼’이 오는 3월 8일 
-              <br>공식 서비스를 오픈한다고 밝혔다.
-              <br>
-              올데이풋볼은 축구선수들의 프로필, 경기영상, 구단의 모집공고 등의 정보를 온라인으로 공유하여 선수·구단·에이전트를 상호 연결하는 스카우팅 서비스다.
+            현재 베타서비스를 운영중인 축구선수 스카우팅 플랫폼 ‘올데이풋볼’이 오는 3월 8일 
+            <br>공식 서비스를 오픈한다고 밝혔다.
             </p>
           </v-card>
         </v-col>
         <v-col cols="12" class="d-flex justify-center mt-5">
-          <v-btn  @click="dialog=true" color="grey darken-2"><v-icon>mdi-plus</v-icon>전체보기</v-btn>
+          <v-btn @click="dialog=true" color="grey darken-2"><v-icon>mdi-plus</v-icon>전체보기</v-btn>
         </v-col>
       </v-row>
     </v-card>

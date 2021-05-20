@@ -47,20 +47,20 @@
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 export default {
     data(){
         return{
         }
     },
-    // beforeCreate(){
-    //     axios.get('api/setting/find')
-    //     .then((res)=>{
-    //         if(!res.data[0].applyTab)this.$store.commit('set_applyTab');
-    //         console.log(this.$store.state.menuList);
-    //         console.log(!res.data[0].applyTab);
-    //     })
-    // },
+    beforeCreate(){
+        axios.get('api/setting/find')
+        .then((res)=>{
+            if(!res.data[0].applyTab)this.$store.commit('set_applyTab');
+            console.log(this.$store.state.menuList);
+            console.log(!res.data[0].applyTab);
+        })
+    },
     methods:{
         OpenDrawer(){ // drawer를 띄우는 메소드 ㅇㅅㅇ //
             this.$store.commit('set_drawerBool',!this.$store.state.drawerBool);

@@ -13,20 +13,6 @@
     }"
     :vertical-delimiters="delimitersLocation"
   >
-    <!-- <template v-slot:prev="{ on, attrs }">
-      <v-btn
-        color="success"
-        v-bind="attrs"
-        v-on="on"
-      >Previous slide</v-btn>
-    </template>
-    <template v-slot:next="{ on, attrs }">
-      <v-btn
-        color="info"
-        v-bind="attrs"
-        v-on="on"
-      >Next slide</v-btn>
-    </template> -->
 <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
   <v-container class="viewContainer d-flex justify-center">
     <v-card color="black" :width="newsPageContainer" style="padding-bottom:10vh;">

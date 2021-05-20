@@ -162,6 +162,16 @@ export default {
           title: 'Redo',
           action: () => this.editor.chain().focus().redo().run(),
         },
+        {
+          icon: 'image-add-line',
+          title: 'image-add-line',
+          action: () => {
+            const url = window.prompt('URL');
+            if (url) {
+              this.editor.chain().focus().setImage({ src: url }).run()
+            }
+          }
+        },
       ],
     }
   },

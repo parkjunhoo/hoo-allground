@@ -77,15 +77,19 @@ const routes = [
       bus.$emit('start:loading');
       axios.get('api/auth/check')
       .then((res)=>{
-        console.log(res.data.info.admin);
-        if(res.data.info.admin)
+        if(res.data==='not_logged'||res.data==='not_admin')
         {
-          next();
-        }
-        else{
           alert('권한이 없습니다.');
           router.push('/nowhere');
           bus.$emit('end:loading');
+          return;
+        }
+        else{
+          if(res.data.info.admin)
+          {
+            next();
+            return;
+          }
         }
       });
     },

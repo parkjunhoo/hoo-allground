@@ -30,7 +30,7 @@
                 </v-expansion-panel-header>
                 <v-expansion-panel-content class="grey darken-1" v-for="(s,sindex) in i.subMenu" :key="sindex">
                   <v-divider></v-divider>
-                  <p class="subText d-flex"><v-icon small class="mx-1">mdi-pencil-box-outline</v-icon>{{s.title}}</p>
+                  <p @click="carouselMove(s.to)" class="subText d-flex"><v-icon small class="mx-1">mdi-pencil-box-outline</v-icon>{{s.title}}</p>
                   <v-divider></v-divider>
                 </v-expansion-panel-content>
               </v-expansion-panel>
@@ -67,6 +67,9 @@ export default {
     },
   },
   methods:{
+    carouselMove(sto){
+      this.$emit('carouselMove',sto);
+    },
       t(){
           let t = new Date();
           

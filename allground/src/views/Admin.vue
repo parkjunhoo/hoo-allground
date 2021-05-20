@@ -1,6 +1,6 @@
 <template>
     <div class="admin" style="height:100%; width:100%; padding-top:70px;">
-        <AdminDrawer/>
+        <AdminDrawer @carouselMove="carouselMove" />
         <v-row no-gutters>
             <v-col class="my-5 ml-5" cols="12">
                 <v-app-bar-nav-icon v-show="!aDrawerBool" @click="aDrawerBool=true" style="position:absolute; z-index:2;" large color="white"></v-app-bar-nav-icon>
@@ -67,6 +67,17 @@
                         </div>
                     </v-carousel-item>
 
+                    <v-carousel-item transition="fade-transition" reverse-transition="fade-transition">
+                        <div class="scrollDiv black" style="height:100%;">
+                            <v-container class="viewContainer d-flex">
+                                <v-row>
+                                    <v-col cols="12">
+                                        <v-btn @click="applyToggle">apply Toggle</v-btn>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                        </div>
+                    </v-carousel-item>
 
                 </v-carousel>
             </v-col>
@@ -76,6 +87,7 @@
 
 <script>
 import bus from '@/utils/bus.js'
+import axios from 'axios'
 import AdminDrawer from '@/components/Admin/AdminDrawer.vue'
 import TipTapEdit from '@/components/TipTap/TipTapEdit.vue'
 import TipTapWrite from '@/components/TipTap/TipTapWrite.vue'
@@ -102,6 +114,18 @@ export default {
         });
     },
     methods:{
+        applyToggle(){
+            axios.get('api/setting/find')
+            .then((res)=>{
+                axios.put('api/setting/edit',{
+                    id:'6099ee9c12ec2fd58286e8d8',
+                    applyTab:!res.data[0].applyTab
+                })
+                .then(()=>{
+                    window.location.reload()
+                })
+            })
+        },
         carouselMove(i){
             this.carouselIndex = i;
         },

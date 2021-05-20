@@ -80,7 +80,7 @@ const routes = [
         if(res.data==='not_logged'||res.data==='not_admin')
         {
           alert('권한이 없습니다.');
-          router.push('/nowhere');
+          router.push('/login');
           bus.$emit('end:loading');
           return;
         }

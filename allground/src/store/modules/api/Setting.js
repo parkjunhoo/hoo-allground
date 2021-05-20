@@ -12,11 +12,11 @@ export default {
         get_setting_find(m){
             axios.get('api/setting/find')
             .then((res)=>{
-                if(res.data.applytab) m.commit('set_applyTab',true);
+                if(res.data[0].applyTab) m.commit('set_applyTab',true);
                 else m.commit('set_applyTab',false);
             })
         },
-        put_setting_edit(opt1){
+        put_setting_edit(m,opt1){
             axios.put('api/setting/edit',{
                 id:'6099ee9c12ec2fd58286e8d8',
                 applyTab:opt1

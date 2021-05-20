@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Header/>
+    <Header v-if="!this.$store.state.adminPage"/>
     <Drawer/>
     <v-main style="width:100%; height:100%;" class="overflow-hidden">
       <transition style="width:100%; height:100%;" name="slide-fade">

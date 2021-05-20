@@ -37,7 +37,7 @@
             </v-col>
             <v-col class="d-flex justify-center" cols="12" style="border-radius: 25px 25px 25px 25px; background-color:rgba(25,25,25,.5);" >
               <p class="subText">스포츠의 모든 순간과 함께 하는 올그라운드 입니다.
-                <br><br>올그라운드는 혁신적은 스포츠 패러다임이라는 명목으로 스포츠 산업을 선도하며 가슴 뛰는 목표를 가지고 있습니다.
+                <br><br>올그라운드는 혁신적인 스포츠 패러다임이라는 명목으로 스포츠 산업을 선도하며 가슴 뛰는 목표를 가지고 있습니다.
                 <br v-if="!this.$vuetify.breakpoint.smAndDown">프로와 아마추어의 벽을 허물어 누구나 동등한 기회를 제공 받을 수 있고, 투명하고 공정한 평가를 위해 서비스를 공급하는 것이 올그라운드의 존재 이유입니다.
                 <br><br>노력과 실력을 있는 그대로 평가받을 수 있다는 것은 축복이자 행복입니다.
                 <br v-if="!this.$vuetify.breakpoint.smAndDown">올그라운드는 바로 그 행복한 순간들을 만들어가는 회사입니다.

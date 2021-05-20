@@ -1,4 +1,5 @@
   
+const { json } = require('express');
 const mongoose  = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -9,7 +10,7 @@ const Boards = new Schema({
         required : true
     },
     contents:{
-        type: String,
+        type: Object,
         required : true
     },
     regTime:{

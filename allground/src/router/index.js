@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import bus from '../utils/bus'
+import axios from 'axios'
 
 Vue.use(VueRouter)
 
@@ -66,6 +67,26 @@ const routes = [
     beforeEnter: (to,from,next) => {
       bus.$emit('start:loading');
       setTimeout( ()=>{next()},0 );
+    },
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: () => import('../views/Admin.vue'),
+    beforeEnter: (to,from,next) => {
+      bus.$emit('start:loading');
+      axios.get('api/auth/check')
+      .then((res)=>{
+        if(!res.data.info.admin)
+        {
+          alert('권한이 없습니다.');
+          router.push('/nowhere');
+          bus.$emit('end:loading');
+        }
+        else{
+          next();
+        }
+      });
     },
   },
   {

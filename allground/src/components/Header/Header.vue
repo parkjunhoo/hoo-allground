@@ -57,8 +57,8 @@ export default {
         axios.get('api/setting/find')
         .then((res)=>{
             if(!res.data[0].applyTab)this.$store.commit('set_applyTab');
-            console.log(this.$store.state.menuList);
-            console.log(!res.data[0].applyTab);
+            // console.log(this.$store.state.menuList);
+            // console.log(!res.data[0].applyTab);
         })
     },
     methods:{

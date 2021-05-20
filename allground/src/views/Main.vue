@@ -141,15 +141,9 @@
             </v-col>
             <v-col cols="12" class="pa-0" style="position:relative;">
               <div @click="dialog=true" style="height:70px; width:100%; position:absolute; left:0; cursor:zoom-in;">
-                <div class="d-flex mx-auto" style="height:70px; width:1000px; overflow:hidden;">
+                <div class="d-flex mx-auto" style="height:70px; width:700px; overflow:hidden;">
                     <v-img class="flow" width="70px" height="70px" style="margin: 0 15px;" contain v-for="i in mouImg" :key="i" :src="i"></v-img>
                     <v-img class="flow" width="70px" height="70px" style="margin: 0 15px;" contain v-for="i in mouImg" :key="i" :src="i"></v-img>
-                  <!-- <v-card class="flow d-flex justify-center align-center transparent px-2" style="margin:0 10px;" 
-                  elevation="0" v-for="i in mouImg" :key="i" height="70px" width="80px">
-                    <v-img width="70%" height="100%" contain :src="i"></v-img></v-card> -->
-                  <!-- <v-card class="flow d-flex justify-center align-center transparent px-2" style="margin:0 10px;" 
-                  elevation="0" v-for="i in mouImg" :key="i" height="70px" width="80px">
-                    <v-img  width="70%" height="100%" contain :src="i"></v-img></v-card> -->
                 </div>
               </div>
             </v-col>
@@ -172,16 +166,9 @@
       </v-btn>
       </div>
       <v-card class="overflow-hidden" rounded="0" style="position:relative;" color="rgba(255,255,255,1)" elevation="0" width="100%" height="100%">
-        <v-row no-gutters>
-          <v-col v-for="i in mouImg" :key="i.title" class="d-flex align-center" cols="12" sm="12" md="6" lg="6" xl="6">
-            <v-row>
-              <v-col cols="3">
-                <v-card rounded="0"  elevation="0" class="transparent"  height="100px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
-              </v-col>
-              <v-col class="d-flex align-center" cols="9">
-                <p class="subText shadowText" style="color:black;">{{i.title}}</p>
-              </v-col>
-            </v-row>
+        <v-row>
+          <v-col v-for="i in mouImg" :key="i.title" class="d-flex align-center justify-center" cols="12" sm="12" md="6" lg="6" xl="6">
+            <v-card rounded="0"  elevation="0" class="transparent"  height="100px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
           </v-col>
         </v-row>
       </v-card>
@@ -198,16 +185,16 @@ export default {
       carouselIndex:0,
       scrollReady:2,
       mouImg:[
-        {src:require('@/assets/main/mou/kfa.png'),title:'대한축구협회',link:'https://www.kfa.or.kr/'},
+        // {src:require('@/assets/main/mou/kfa.png'),title:'대한축구협회',link:'https://www.kfa.or.kr/'},
         {src:require('@/assets/main/mou/J&M.png'),title:'J&M 풋볼 매니지먼트',link:''},
         {src:require('@/assets/main/mou/PTA.png'),title:'PTA',link:''},
         {src:require('@/assets/main/mou/라틴아메리카.png'),title:'라틴아메리칸 스포츠 매니지먼트',link:''},
-        {src:require('@/assets/main/mou/비주얼스포츠.png'),title:'비주얼 스포츠',link:'https://www.visualsports.co.kr/'},
+        // {src:require('@/assets/main/mou/비주얼스포츠.png'),title:'비주얼 스포츠',link:'https://www.visualsports.co.kr/'},
         {src:require('@/assets/main/mou/스톤스포츠.png'),title:'스톤 스포츠 매니지먼트',link:'https://www.stonesportsmanagement.co.uk/'},
         {src:require('@/assets/main/mou/카나스포츠.png'),title:'KANA 스프츠협회',link:'https://www.facebook.com/Kana-Acad%C3%A9mie-Jeunesse-Sportive-de-Sanoyah-118049230036779/'},
         {src:require('@/assets/main/mou/킹슬리스포츠.png'),title:'킹슬리 스포츠',link:'https://en.kingsleysports.com/'},
         {src:require('@/assets/main/mou/탈렌티로고.png'),title:'TFG',link:'https://www.talentifuorigioco.it/'},
-        {src:require('@/assets/main/mou/풋볼아웃라인.png'),title:'풋볼아웃라인',link:'https://www.instagram.com/football_outline/?hl=ko'},
+        // {src:require('@/assets/main/mou/풋볼아웃라인.png'),title:'풋볼아웃라인',link:'https://www.instagram.com/football_outline/?hl=ko'},
       ],
       preloadImg:[
         require('@/assets/main/1.jpg'),
@@ -217,16 +204,16 @@ export default {
         require('@/assets/main/5.jpg'),
         require('@/assets/main/6.jpg'),
         require('@/assets/main/7.jpg'),
-        require('@/assets/main/mou/kfa.png'),
+        // require('@/assets/main/mou/kfa.png'),
         require('@/assets/main/mou/J&M.png'),
         require('@/assets/main/mou/PTA.png'),
         require('@/assets/main/mou/라틴아메리카.png'),
-        require('@/assets/main/mou/비주얼스포츠.png'),
+        // require('@/assets/main/mou/비주얼스포츠.png'),
         require('@/assets/main/mou/스톤스포츠.png'),
         require('@/assets/main/mou/카나스포츠.png'),
         require('@/assets/main/mou/킹슬리스포츠.png'),
         require('@/assets/main/mou/탈렌티로고.png'),
-        require('@/assets/main/mou/풋볼아웃라인.jpg'),
+        // require('@/assets/main/mou/풋볼아웃라인.jpg'),
       ]
     }
   },

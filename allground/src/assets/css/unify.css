@@ -209,3 +209,42 @@ br::selection{
         font-size:.8rem;
     }
 }
+
+
+.newsTitleText{
+    color:rgba(255,255,255,1);
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    font-size:1.2rem;
+}
+.newsSubText{
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    font-size:1rem;
+}
+
+@media (max-width:1000px){
+    .newsTitleText{
+        font-size:1.2rem;
+    }
+    .newsSubText{
+        font-size:.8rem;
+    }
+}
+@media (max-width:680px){
+    .newsTitleText{
+        font-size:1rem;
+    }
+    .newsSubText{
+        font-size:.75rem;
+    }
+}
+@media (max-width:520px){
+    
+    .newsTitleText{
+    font-size:1rem;
+    }
+    .newsSubText{
+        font-size:.7rem;
+    }
+}

@@ -1,5 +1,5 @@
 <template>
-<div class="abbout overflow-hidden" style="background-color:black;">
+<div class="news overflow-hidden" style="background-color:black;">
     <v-carousel
     class="custumCarousel"
     height="100vh"

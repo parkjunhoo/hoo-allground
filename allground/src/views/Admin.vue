@@ -6,7 +6,12 @@
                 <v-app-bar-nav-icon v-show="!aDrawerBool" @click="aDrawerBool=true" style="position:absolute; z-index:2;" large color="white"></v-app-bar-nav-icon>
             </v-col>
             <v-col cols="12">
-                <v-carousel v-model="carouselIndex" height="100%" hide-delimiters :show-arrows="false">
+                <v-carousel
+                :touch="{
+                down:()=>{return false;},
+                up:()=>{return false;}
+                }"
+                 v-model="carouselIndex" height="100%" hide-delimiters :show-arrows="false">
 
                     <v-carousel-item transition="fade-transition" reverse-transition="fade-transition">
                         <div class="scrollDiv black" style="height:100%;">

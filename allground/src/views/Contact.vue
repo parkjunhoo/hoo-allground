@@ -151,12 +151,49 @@
 
   </v-carousel>
   <!-- 메일보내기전 캡챠  ㅇㅅㅇ -->
-    <v-dialog
+    <!-- <v-dialog
       v-model="dialog"
       persistent
       width="50vw"
     >
       <v-card class="yellow darken-3" elevation="0" width="50vw">
+        <p style="text-align:center">정답을 골라주세요!!</p>
+        <p style="text-align:center">{{q0}} + {{q1}} = ???</p>
+
+        <v-card class="pa-0 ma-0" elevation="0">
+          <v-row no-gutters>
+            <v-col cols="5">
+              <input type="text">
+            </v-col>
+          </v-row>
+
+          <v-row class="pa-5" no-gutters>
+            <v-col v-for="i in b" :key="i.index" class="d-flex justify-center mb-3" cols="12" sm="12" md="3" lg="3" xl="3">
+              <v-btn @click="btnClick(i.r)" color="green">{{i.n}}</v-btn>
+            </v-col>
+            <v-col class="d-flex justify-center" cols="12" sm="12" md="3" lg="3" xl="3">
+              <v-btn color="red" @click="dialog=false;">닫기</v-btn>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-card>
+    </v-dialog> -->
+
+
+    <v-dialog persistent v-model="dialog" width="50%">
+      <div class="d-flex align-center" style="position:fixed; z-index:2; background-color:rgba(0,0,0,.8); height:50px; width:50%;">
+        <v-row class="d-flex align-center" no-gutters>
+          <v-col cols="12">
+            <p style="text-align:center;" class="newsTitleText">문제를 풀어주세요!</p>
+          </v-col>
+          <v-col class="d-flex justify-end" style="position:absolute;" cols="12">
+            <v-btn @click="dialog=false" icon>
+              <v-icon class="mr-5" style="color:white; z-index:100;">mdi-close-thick</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </div>
+      <v-card style="padding-top:60px;" elevation="0" width="50vw">
         <p style="text-align:center">정답을 골라주세요!!</p>
         <p style="text-align:center">{{q0}} + {{q1}} = ???</p>
 

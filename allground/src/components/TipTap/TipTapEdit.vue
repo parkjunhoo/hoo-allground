@@ -52,7 +52,9 @@ export default {
         TaskList,
         TaskItem,
         TextAlign,
-        Image,
+        Image.configure({
+          inline:true,
+        }),
         CharacterCount.configure({
           limit: 90000,
         }),
@@ -211,6 +213,7 @@ export default {
 </style>
 
 <style lang="scss">
+
 /* Give a remote user a caret */
 .collaboration-cursor__caret {
   position: relative;
@@ -258,6 +261,10 @@ export default {
   h5,
   h6 {
     line-height: 1.1;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
   }
 
   code {

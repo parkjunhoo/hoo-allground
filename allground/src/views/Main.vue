@@ -142,8 +142,8 @@
             <v-col cols="12" class="pa-0" style="position:relative;">
               <div @click="dialog=true" style="height:70px; width:100%; position:absolute; left:0; cursor:zoom-in;">
                 <div class="d-flex mx-auto" style="height:70px; width:700px; overflow:hidden;">
-                    <v-img class="flow" width="70px" height="70px" style="margin: 0 15px;" contain v-for="i in mouImg" :key="i" :src="i"></v-img>
-                    <v-img class="flow" width="70px" height="70px" style="margin: 0 15px;" contain v-for="i in mouImg" :key="i" :src="i"></v-img>
+                    <v-img class="flow" width="70px" height="70px" style="margin: 0 15px;" contain v-for="(i,index) in mouImg" :key="index" :src="i"></v-img>
+                    <v-img class="flow" width="70px" height="70px" style="margin: 0 15px;" contain v-for="i in mouImg" :key="i.link" :src="i"></v-img>
                 </div>
               </div>
             </v-col>
@@ -157,15 +157,20 @@
   <!-- <v-container style="padding-top:70px;">
     <p style="color:white;">메인</p>
   </v-container> -->
-      <v-dialog v-model="dialog" width="100%" height="100%">
-      <div class="d-flex align-center" style="background-color:rgba(55,100,55,1);">
-        <p class="titleSubText">올그라운드와 함께하는 기업</p>
-        <v-spacer></v-spacer>
-      <v-btn @click="dialog=false" icon>
-        <v-icon style="color:white;">mdi-export</v-icon>
-      </v-btn>
+    <v-dialog v-model="dialog" width="100%" height="100%">
+      <div class="d-flex align-center" style="position:fixed; z-index:2; background-color:rgba(0,0,0,.8); height:50px; width: calc(100% - 58px);">
+        <v-row class="d-flex align-center" no-gutters>
+          <v-col cols="12">
+            <p style="text-align:center;" class="newsTitleText">올그라운드와 함께하는 기업</p>
+          </v-col>
+          <v-col class="d-flex justify-end" style="position:absolute;" cols="12">
+            <v-btn @click="dialog=false" icon>
+              <v-icon class="mr-5" style="color:white; z-index:100;">mdi-close-thick</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
       </div>
-      <v-card class="overflow-hidden" rounded="0" style="position:relative;" color="rgba(255,255,255,1)" elevation="0" width="100%" height="100%">
+      <v-card class="overflow-hidden" rounded="0" style="position:relative; padding-top:60px;" color="rgba(255,255,255,1)" elevation="0" width="100%" height="100%">
         <v-row>
           <v-col v-for="i in mouImg" :key="i.title" class="d-flex align-center justify-center" cols="12" sm="12" md="6" lg="6" xl="6">
             <v-card rounded="0"  elevation="0" class="transparent"  height="100px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
@@ -186,9 +191,9 @@ export default {
       scrollReady:2,
       mouImg:[
         // {src:require('@/assets/main/mou/kfa.png'),title:'대한축구협회',link:'https://www.kfa.or.kr/'},
-        {src:require('@/assets/main/mou/J&M.png'),title:'J&M 풋볼 매니지먼트',link:''},
-        {src:require('@/assets/main/mou/PTA.png'),title:'PTA',link:''},
-        {src:require('@/assets/main/mou/라틴아메리카.png'),title:'라틴아메리칸 스포츠 매니지먼트',link:''},
+        {src:require('@/assets/main/mou/J&M.png'),title:'J&M 풋볼 매니지먼트',link:'none'},
+        {src:require('@/assets/main/mou/PTA.png'),title:'PTA',link:'none2'},
+        {src:require('@/assets/main/mou/라틴아메리카.png'),title:'라틴아메리칸 스포츠 매니지먼트',link:'none3'},
         // {src:require('@/assets/main/mou/비주얼스포츠.png'),title:'비주얼 스포츠',link:'https://www.visualsports.co.kr/'},
         {src:require('@/assets/main/mou/스톤스포츠.png'),title:'스톤 스포츠 매니지먼트',link:'https://www.stonesportsmanagement.co.uk/'},
         {src:require('@/assets/main/mou/카나스포츠.png'),title:'KANA 스프츠협회',link:'https://www.facebook.com/Kana-Acad%C3%A9mie-Jeunesse-Sportive-de-Sanoyah-118049230036779/'},

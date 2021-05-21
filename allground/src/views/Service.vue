@@ -140,35 +140,25 @@
         </v-container>
       </v-img>
     </v-carousel-item>
-
-
   </v-carousel>
-  <!-- <v-container style="padding-top:70px;">
-    <p style="color:white;">메인</p>
-  </v-container> -->
 
-   <v-dialog
-      v-model="dialog"
-      width="50vw"
-      height="30vh"
-    >
-      <v-card class="pa-3" color="transparent" elevation="10" width="100%" height="100%">
-        <v-row>
-          <v-col style="background-color:rgba(55,100,55,.9)" cols="12">
-            <p class="titleSubText" style="text-align:center; font-family: 'Noto Sans KR', cursive;">Coming soon</p>
+    <v-dialog v-model="dialog" width="50%" height="100%">
+      <div class="d-flex align-center" style="position:fixed; z-index:2; background-color:rgba(0,0,0,.8); height:50px; width:50%;">
+        <v-row class="d-flex align-center" no-gutters>
+          <v-col cols="12">
+            <p style="text-align:center;" class="newsTitleText">Coming Soon</p>
+          </v-col>
+          <v-col class="d-flex justify-end" style="position:absolute;" cols="12">
+            <v-btn @click="dialog=false" icon>
+              <v-icon class="mr-5" style="color:white; z-index:100;">mdi-close-thick</v-icon>
+            </v-btn>
           </v-col>
         </v-row>
-        <v-row style="background-color:rgba(0,0,0,.8)" class="d-flex justify-center align-center fill-height">
-          <v-col class="d-flex justify-center" cols="12">
-            <p class="subText" style="text-align:center">현재 서비스 준비중 입니다.</p>
-          </v-col>
-          <v-col class="d-flex justify-center" cols="12">
-            <v-btn @click="dialog=false;" color="white" outlined>close</v-btn>
-          </v-col>
-        </v-row>
+      </div>
+      <v-card class="overflow-hidden" rounded="0" style="position:relative; padding-top:60px;" color="rgba(255,255,255,1)" elevation="0" width="100%" height="100%">
+        <v-card class="d-flex justify-center py-10"> <p style="color:black;" class="titleSubText">서비스 준비중입니다.</p></v-card>
       </v-card>
     </v-dialog>
-    
 </div>
 </template>
 

@@ -21,7 +21,7 @@
           <p class="titleText">ALLGROUND NEWS</p>
         </v-col>
         <v-col class="d-flex justify-center" cols="12">
-          <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh;">
+          <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.5);">
             <v-row no-gutters>
                 <v-col class="py-5" style="background-color:rgba(255,255,255,.6);" cols="9">
                     <p style="color:black;" class="subText">제목</p>

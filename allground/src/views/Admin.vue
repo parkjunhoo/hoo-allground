@@ -138,7 +138,7 @@ export default {
             this.output.id = this.boards[i]._id;
             this.output.title =  this.boards[i].title;
             this.output.contents = this.boards[i].contents;
-            console.log(this.output);
+            // console.log(this.output);
             this.carouselIndex=1;
         },
     },

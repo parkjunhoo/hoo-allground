@@ -15,6 +15,7 @@
 <script>
 // import { generateHTML } from '@tiptap/html'
 // import { generateJSON } from '@tiptap/html'
+import bus from '@/utils/bus.js'
 import { Editor, EditorContent } from '@tiptap/vue-2'
 import StarterKit from '@tiptap/starter-kit'
 import TaskList from '@tiptap/extension-task-list'
@@ -69,7 +70,7 @@ export default {
   },
   watch:{
     outputId(){
-      console.log('work');
+      // console.log('work');
       this.title = this.output.title;
       this.editor.commands.setContent(this.output.contents);
     },
@@ -90,14 +91,16 @@ export default {
 
   methods: {
     clickSubmit(){
+      bus.$emit('start:loading');
       axios.put('api/board/edit',{
         id:this.output.id,
         title: this.title,
-        contents: this.localJSON,
+        contents: this.editor.getJSON()
       })
       .then((res)=>{
-        console.log(res.data);
+        // console.log(res.data);
         this.$store.dispatch('get_board_find');
+        bus.$emit('end:loading');
         this.$emit('carouselMove',0);
       })
       
@@ -107,7 +110,7 @@ export default {
         id:this.output.id,
       })
       .then((res)=>{
-        console.log(res.data);
+        // console.log(res.data);
         this.$store.dispatch('get_board_find');
         this.$emit('carouselMove',0);
       })

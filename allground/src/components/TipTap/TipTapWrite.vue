@@ -13,6 +13,7 @@
 <script>
 // import { generateHTML } from '@tiptap/html'
 // import { generateJSON } from '@tiptap/html'
+import bus from '@/utils/bus.js'
 import { Editor, EditorContent } from '@tiptap/vue-2'
 import StarterKit from '@tiptap/starter-kit'
 import TaskList from '@tiptap/extension-task-list'
@@ -76,13 +77,15 @@ export default {
     },
 
     clickSubmit(){
+      bus.$emit('start:loading');
       axios.post('api/board/write',{
         title: this.title,
         contents: this.localJSON,
       })
-      .then((res)=>{
-        console.log(res.data);
+      .then(()=>{
+        // console.log(res.data);
         this.$store.dispatch('get_board_find');
+        bus.$emit('end:loading');
         this.$emit('carouselMove',0);
         this.title=null;
         this.localJSON=null;

@@ -72,13 +72,9 @@
       </v-col>
     </v-row>
   </div>
-  <v-card class="d-flex justify-center" rounded="0" style="position:relative;" color="rgba(255,255,255,1)" elevation="0" width="100%" height="100%">
-    <v-card elevation="0" class="d-flex justify-center">
-      <v-card style="padding-top:60px; padding-bottom:60px;" elevation="0" :width="newsContainer">
+      <v-card :style="{paddingRight:newsContainer,paddingLeft:newsContainer}" style="padding-top:60px; padding-bottom:60px;" width="100%" elevation="0">
         <TipTapView :output="output"/>
       </v-card>
-    </v-card>
-  </v-card>
 </v-dialog>
 
 </div>
@@ -104,12 +100,12 @@ export default {
   computed:{
     newsContainer(){
       switch(this.$vuetify.breakpoint.name){
-        case 'xs' : return '100%';
-        case 'sm' : return '100%';
-        case 'md' : return '80%';
-        case 'lg' : return '50%';
-        case 'xl' : return '50%';
-        default : return '50%';
+        case 'xs' : return '0%';
+        case 'sm' : return '0%';
+        case 'md' : return '10%';
+        case 'lg' : return '20%';
+        case 'xl' : return '20%';
+        default : return '0%';
       }
     },
   },

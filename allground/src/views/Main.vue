@@ -161,7 +161,7 @@
       <div class="d-flex align-center" style="position:fixed; z-index:2; background-color:rgba(0,0,0,.8); height:50px; width: calc(100% - 58px);">
         <v-row class="d-flex align-center" no-gutters>
           <v-col cols="12">
-            <p style="text-align:center;" class="newsTitleText">올그라운드와 함께하는 기업</p>
+            <p style="text-align:center;" class="newsTitleText">Our partner</p>
           </v-col>
           <v-col class="d-flex justify-end" style="position:absolute;" cols="12">
             <v-btn @click="dialog=false" icon>

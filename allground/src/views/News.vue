@@ -47,7 +47,7 @@
 <v-dialog v-model="dialog" width="100%" height="100%">
   <div class="d-flex align-center" style="position:fixed; z-index:2; background-color:rgba(0,0,0,.8); height:50px; width: calc(100% - 58px);">
     <v-row class="d-flex align-center" no-gutters>
-      <v-col cols="12">
+      <v-col cols="12" class="d-flex justify-center">
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
               <span v-bind="attrs" v-on="on" style="z-index:99;" class="newsTitleText">

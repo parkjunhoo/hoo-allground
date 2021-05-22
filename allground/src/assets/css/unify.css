@@ -91,7 +91,7 @@ textarea::-webkit-scrollbar-track {
 
 .scrollDiv{
     overflow:auto;
-    background-color:rgba(25,25,25,.3);
+    background-color:transparent;
 }
 
 .custumCarousel .v-item--active{

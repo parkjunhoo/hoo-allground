@@ -1,8 +1,8 @@
 <template>
-<div class="news overflow-hidden" style="background-color:black;">
+<div class="news" style="background-color:black;">
     <v-carousel
     class="custumCarousel"
-    height="100vh"
+    height="100%"
     :show-arrows="false"
     hide-delimiter-background
     delimiter-icon="mdi-soccer black rounded-xl"
@@ -14,33 +14,35 @@
     :vertical-delimiters="delimitersLocation"
   >
   <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
-      <div class="scrollDiv black " style="height:100%;">
-        <v-img class="d-flex align-center" gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.5), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/news/3.jpg">
-          <v-container class="viewContainer" style="height:fit-content;">
-              <v-row>
-                  <v-col cols="12">
-                      <p class="titleSubText">News</p>
-                  </v-col>
-              </v-row>
-              <v-row class="mt-5" no-gutters>
-                  <v-col class="py-5" style="background-color:rgba(255,255,255,.6);" cols="10">
-                      <p style="color:black;" class="subText">제목</p>
-                  </v-col>
-                  <v-col class="py-5" style="background-color:rgba(255,255,255,.6);" cols="2">
-                      <p style="color:black;" class="subText">날짜</p>
-                  </v-col>
-              </v-row>
-              <v-row no-gutters v-for="(i,index) in boards" :key="index">
-                  <v-col class="py-3" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.5);" cols="10">
-                      <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap;" class="newsSubText">{{i.title}}</p>
-                  </v-col>
-                  <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.5);" cols="2">
-                      <p class="newsSubText">{{i.regTime.slice(0,10)}}</p>
-                  </v-col>
-              </v-row>
-          </v-container>
-        </v-img>
-      </div>
+    <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.7), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/news/3.jpg">
+    <v-container class="viewContainer d-flex justify-center align-center">
+      <v-row>
+        <v-col class="d-flex justify-center" cols="12">
+          <p class="titleText">ALLGROUND NEWS</p>
+        </v-col>
+        <v-col class="d-flex justify-center" cols="12">
+          <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh;">
+            <v-row no-gutters>
+                <v-col class="py-5" style="background-color:rgba(255,255,255,.6);" cols="9">
+                    <p style="color:black;" class="subText">제목</p>
+                </v-col>
+                <v-col class="py-5" style="background-color:rgba(255,255,255,.4);" cols="3">
+                    <p style="color:black;" class="subText">날짜</p>
+                </v-col>
+            </v-row>
+            <v-row no-gutters v-for="(i,index) in boards" :key="index">
+                <v-col class="py-3" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.6);" cols="9">
+                    <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap; cursor:pointer;" class="newsSubText">{{i.title}}</p>
+                </v-col>
+                <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="3">
+                    <p class="newsSubText">{{i.regTime.slice(0,10)}}</p>
+                </v-col>
+            </v-row>
+          </div>
+        </v-col>
+      </v-row>
+      </v-container>
+    </v-img>
   </v-carousel-item>
 </v-carousel>
 
@@ -98,6 +100,16 @@ export default {
     }
   },
   computed:{
+    listContainer(){
+      switch(this.$vuetify.breakpoint.name){
+        case 'xs' : return '100%';
+        case 'sm' : return '100%';
+        case 'md' : return '80%';
+        case 'lg' : return '60%';
+        case 'xl' : return '60%';
+        default : return '100%';
+      }
+    },
     newsContainer(){
       switch(this.$vuetify.breakpoint.name){
         case 'xs' : return '0%';

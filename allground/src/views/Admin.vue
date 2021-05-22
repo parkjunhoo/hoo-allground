@@ -1,5 +1,5 @@
 <template>
-    <div class="admin" style="height:100%; width:100%; padding-top:70px;">
+    <div class="admin scrollDiv" style="height:100%; width:100%; padding-top:70px;">
         <AdminDrawer @carouselMove="carouselMove" />
         <v-row no-gutters>
             <v-col class="my-5 ml-5" cols="12">
@@ -14,7 +14,7 @@
                  v-model="carouselIndex" height="100%" hide-delimiters :show-arrows="false">
 
                     <v-carousel-item transition="fade-transition" reverse-transition="fade-transition">
-                        <div class="scrollDiv black" style="height:100%;">
+                        <div class="black" style="height:100%;">
                             <v-container class="viewContainer">
                                 <v-row>
                                     <v-col cols="12">

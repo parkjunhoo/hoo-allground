@@ -18,15 +18,15 @@
     <v-container class="viewContainer d-flex justify-center align-center">
       <v-row>
         <v-col class="d-flex justify-center" cols="12">
-          <p class="titleText">ALLGROUND NEWS</p>
+          <p class="titleText">NEWS</p>
         </v-col>
         <v-col class="d-flex justify-center" cols="12">
-          <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.5);">
+          <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
             <v-row no-gutters>
-                <v-col class="py-5" style="background-color:rgba(255,255,255,.6);" cols="9">
+                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="9">
                     <p style="color:black;" class="subText">제목</p>
                 </v-col>
-                <v-col class="py-5" style="background-color:rgba(255,255,255,.4);" cols="3">
+                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="3">
                     <p style="color:black;" class="subText">날짜</p>
                 </v-col>
             </v-row>
@@ -105,8 +105,8 @@ export default {
         case 'xs' : return '100%';
         case 'sm' : return '100%';
         case 'md' : return '80%';
-        case 'lg' : return '60%';
-        case 'xl' : return '60%';
+        case 'lg' : return '80%';
+        case 'xl' : return '80%';
         default : return '100%';
       }
     },

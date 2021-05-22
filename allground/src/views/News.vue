@@ -23,18 +23,18 @@
                   </v-col>
               </v-row>
               <v-row class="mt-5" no-gutters>
-                  <v-col class="py-5" style="background-color:rgba(55,133,55,.6);" cols="10">
+                  <v-col class="py-5" style="background-color:rgba(255,255,255,.6);" cols="10">
                       <p style="color:black;" class="subText">제목</p>
                   </v-col>
-                  <v-col class="py-5" style="background-color:rgba(55,133,55,.6);" cols="2">
+                  <v-col class="py-5" style="background-color:rgba(255,255,255,.6);" cols="2">
                       <p style="color:black;" class="subText">날짜</p>
                   </v-col>
               </v-row>
               <v-row no-gutters v-for="(i,index) in boards" :key="index">
-                  <v-col class="py-3" style="background-color:rgba(255,255,255,.6); border-bottom:1px solid rgba(0,0,0,.5);" cols="10">
+                  <v-col class="py-3" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.5);" cols="10">
                       <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap;" class="newsSubText">{{i.title}}</p>
                   </v-col>
-                  <v-col class="py-3" style="background-color:rgba(255,255,255,.6); border-bottom:1px solid rgba(0,0,0,.5);" cols="2">
+                  <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.5);" cols="2">
                       <p class="newsSubText">{{i.regTime.slice(0,10)}}</p>
                   </v-col>
               </v-row>
@@ -48,12 +48,17 @@
   <div class="d-flex align-center" style="position:fixed; z-index:2; background-color:rgba(0,0,0,.8); height:50px; width: calc(100% - 58px);">
     <v-row class="d-flex align-center" no-gutters>
       <v-col cols="12" class="d-flex justify-center">
-          <v-tooltip bottom>
+          <v-tooltip v-if="!this.$vuetify.breakpoint.smAndDown" bottom>
             <template v-slot:activator="{ on, attrs }">
-              <span v-if="!this.$vuetify.breakpoint.smAndDown" v-bind="attrs" v-on="on" style="z-index:99;" class="newsTitleText">
+              <span  v-bind="attrs" v-on="on" style="z-index:99;" class="newsTitleText">
                 {{output.title}}
               </span>
-              <span v-if="this.$vuetify.breakpoint.smAndDown" v-bind="attrs" v-on="on" style="z-index:99;" class="newsTitleText">
+            </template>
+            <span>{{output.title}}</span>
+          </v-tooltip>
+          <v-tooltip v-if="this.$vuetify.breakpoint.smAndDown" bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <span  v-bind="attrs" v-on="on" style="z-index:99;" class="newsTitleText">
                 News
               </span>
             </template>

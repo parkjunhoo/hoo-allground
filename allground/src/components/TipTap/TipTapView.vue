@@ -1,5 +1,5 @@
 <template>
-  <div v-html="output"></div>
+  <div class="TipTapView" v-html="viewContents"></div>
 </template>
 
 <script>
@@ -16,13 +16,13 @@ import CharacterCount from '@tiptap/extension-character-count'
 import Image from '@tiptap/extension-image'
 export default {
     props: {
-        input: {
+        output: {
         type: Object,
         }
     },
     computed: {
-        output() {
-        return generateHTML(this.input, [
+        viewContents() {
+        return generateHTML(this.output.contents, [
             StarterKit,
             Highlight,
             TaskList,
@@ -43,9 +43,48 @@ export default {
 }
 </script>
 
-<style scoped>
-img {
-    max-width: 100%;
-    height: auto;
+
+<style>
+.TipTapView img{
+  max-width: 100% !important;
+  height: auto !important;
+  padding:20px;
 }
+
+.TipTapView h1,h2,h3,h4,h5,h6{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:1.2rem;
+}
+.TipTapView p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:1rem;
+}
+
+@media (max-width:1000px){
+    .TipTapView h1,h2,h3,h4,h5,h6{
+        font-size:1.2rem;
+    }
+    .TipTapView p{
+        font-size:.8rem;
+    }
+}
+@media (max-width:680px){
+    .TipTapView h1,h2,h3,h4,h5,h6{
+        font-size:1rem;
+    }
+    .TipTapView p{
+        font-size:.75rem;
+    }
+}
+@media (max-width:520px){
+    
+    .TipTapView h1,h2,h3,h4,h5,h6{
+    font-size:1rem;
+    }
+    .TipTapView p{
+        font-size:.7rem;
+    }
+}
+
 </style>
+

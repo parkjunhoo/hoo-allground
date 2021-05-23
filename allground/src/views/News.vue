@@ -16,32 +16,53 @@
   <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
     <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.7), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/news/3.jpg">
     <v-container class="viewContainer d-flex justify-center align-center">
-      <v-row>
+      <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
+        <v-card v-for="(i,index) in boards" :key="index" width="90%" class="pa-5 mx-auto mt-5" color="rgba(255,255,255,1)" elevation="10" :style="{paddingRight:newsContainer,paddingLeft:newsContainer}">
+          <v-row no-gutters>
+            <v-col class="pa-3" cols="12">
+              <p class="listSubText">{{i.regTime.slice(0,10)}}</p>
+            </v-col>
+            <v-col class="pa-3" cols="12">
+              <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap; cursor:pointer;" class="listTitleText">{{i.title}}</p>
+            </v-col>
+            <v-col class="pa-3 d-flex align-center" cols="12">
+              <v-img width="75px" height="75px" contain :src="i.thumb"></v-img>
+              <p class="listSubText align-self-start px-2">{{i.pretext}}</p>
+            </v-col>
+          </v-row>
+        </v-card>
+      </div>
+      <!-- <v-row>
         <v-col class="d-flex justify-center" cols="12">
           <p class="titleText">NEWS</p>
         </v-col>
         <v-col class="d-flex justify-center" cols="12">
           <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
             <v-row no-gutters>
-                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="9">
+                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
+                </v-col>
+                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="8">
                     <p style="color:black;" class="subText">제목</p>
                 </v-col>
-                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="3">
+                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
                     <p style="color:black;" class="subText">날짜</p>
                 </v-col>
             </v-row>
             <v-row no-gutters v-for="(i,index) in boards" :key="index">
-                <v-col class="py-3" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.6);" cols="9">
+                <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
+                  <v-img width="100%" height="50px" contain :src="i.thumb"></v-img>
+                </v-col>
+                <v-col class="py-3" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.6);" cols="8">
                     <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap; cursor:pointer;" class="newsSubText">{{i.title}}</p>
                 </v-col>
-                <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="3">
+                <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
                     <p class="newsSubText">{{i.regTime.slice(0,10)}}</p>
                 </v-col>
             </v-row>
           </div>
         </v-col>
-      </v-row>
-      </v-container>
+      </v-row> -->
+    </v-container>
     </v-img>
   </v-carousel-item>
 </v-carousel>
@@ -146,10 +167,50 @@ export default {
         preloadImage.src = this.preloadImg[i]
       }
     },
+    findThumb(){
+      for(let i=0; i<this.boards.length; i++){
+        let success = false;
+        let c = this.boards[i].contents.content;
+        for(let o=0; o<c.length; o++){
+          if(c[o].content!=undefined&&success===false){
+            let cc = c[o].content;
+            for(let p=0; p<cc.length; p++){
+              if(cc[p].type==='image'){
+                this.boards[i].thumb = cc[p].attrs.src;
+                success = true;
+              }
+            }
+          }
+        }
+      }
+    },
+    findPretext(){
+      for(let i=0; i<this.boards.length; i++){
+        this.boards[i].pretext='';
+        let success = false;
+        let c = this.boards[i].contents.content;
+        for(let o=0; o<c.length; o++){
+          if(c[o].content!=undefined&&success===false){
+            let cc = c[o].content;
+            for(let p=0; p<cc.length; p++){
+              if(cc[p].type==='text'){
+                if(this.boards[i].pretext.trim().length < 200)this.boards[i].pretext = this.boards[i].pretext + ' ' + cc[p].text;
+                if(this.boards[i].pretext.trim().length > 199 ){
+                  success = true;
+                  break;
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     findBoards(){
       axios.get('api/board/find')
       .then((res)=>{
         this.boards=res.data;
+        this.findThumb();
+        this.findPretext();
       })
     },
 
@@ -198,4 +259,47 @@ export default {
 
 <style scoped>
 @import url("../assets/css/unify.css");
+.listTitleText{
+    color:#0c43b7;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:16px;
+}
+.listSubText{
+    color:black;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:14px;
+}
+
+@media (max-width:1270px){
+  .listTitleText{
+      font-size:16px;
+  }
+  .listSubText{
+      font-size:14px;
+  }
+}
+@media (max-width:1000px){
+  .listTitleText{
+      font-size:16px;
+  }
+  .listSubText{
+      font-size:14px;
+  }
+}
+@media (max-width:680px){
+  .listTitleText{
+    font-size:15px;
+  }
+  .listSubText{
+    font-size:13px;
+  }
+}
+@media (max-width:520px){
+  .listTitleText{
+    font-size:14px;
+  }
+  .listSubText{
+    font-size:12px;
+  }
+}
 </style>

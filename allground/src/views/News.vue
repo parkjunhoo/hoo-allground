@@ -15,62 +15,83 @@
   >
   <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
     <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.7), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/news/3.jpg">
-    <v-container class="viewContainer d-flex justify-center align-center">
-      <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
-        <v-card v-for="(i,index) in boards" :key="index" width="90%" class="pa-5 mx-auto mt-5" color="rgba(255,255,255,1)" elevation="10" :style="{paddingRight:newsContainer,paddingLeft:newsContainer}">
+    <v-container class="viewContainer d-flex justify-center" style="height:fit-content; padding-botton:5px;">
+      <p class="titleText">News</p>
+    </v-container>
+      <v-container class="viewContainer d-flex justify-center align-start" style="padding-top:5px;">
+        <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
           <v-row no-gutters>
-            <v-col class="pa-3" cols="12">
-              <p class="listSubText">{{i.regTime.slice(0,10)}}</p>
-            </v-col>
-            <v-col class="pa-3" cols="12">
-              <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap; cursor:pointer;" class="listTitleText">{{i.title}}</p>
-            </v-col>
-            <v-col class="pa-3 d-flex align-center" cols="12">
-              <v-img width="75px" height="75px" contain :src="i.thumb"></v-img>
-              <p class="listSubText align-self-start px-2">{{i.pretext}}</p>
+            <v-col class="mt-5" v-for="(i,index) in boards" :key="index" cols="12" sm="12" md="4" lg="3" xl="3">
+              <v-card width="90%" class="mx-auto mt-5" color="rgba(22,22,22,.4)" elevation="10">
+                <v-row no-gutter>
+
+
+                  <v-col class="d-flex align-center" cols="12">
+                    <v-hover v-slot="{ hover }">
+                      <v-card class="hovercard" :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
+                        <v-card width="100%" height="25vh">
+                          <v-img style="cursor:pointer;" @click="clickTitle(index)" width="100%" height="100%" :src="i.thumb" >
+                            <div @click="clickTitle(index)" v-if="hover" class="d-flex justify-center align-center" style="width:100%; height:100%; background-color:rgba(0,0,0,.8); cursor:pointer;">
+                              <p class="titleSubText">전체보기 <v-icon x-large>mdi-fullscreen</v-icon></p>
+                            </div>
+                          </v-img>
+                        </v-card>
+                      </v-card>
+                    </v-hover>
+                  </v-col>
+
+                  <v-col class="pa-3" cols="12">
+                    <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; cursor:pointer;" class="listTitleText">{{i.title}}</p>
+                  </v-col>
+                  <v-col class="pa-3" cols="12">
+                    <p class="listSubText">{{i.regTime.slice(0,10)}}</p>
+                  </v-col>
+                  <v-col class="pa-3 d-flex align-center" cols="12">
+                    <p class="listSubText align-self-start px-2">{{i.pretext}}</p>
+                  </v-col>
+                </v-row>
+              </v-card>
             </v-col>
           </v-row>
-        </v-card>
-      </div>
-      <!-- <v-row>
-        <v-col class="d-flex justify-center" cols="12">
-          <p class="titleText">NEWS</p>
-        </v-col>
-        <v-col class="d-flex justify-center" cols="12">
-          <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
-            <v-row no-gutters>
-                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
-                </v-col>
-                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="8">
-                    <p style="color:black;" class="subText">제목</p>
-                </v-col>
-                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
-                    <p style="color:black;" class="subText">날짜</p>
-                </v-col>
-            </v-row>
-            <v-row no-gutters v-for="(i,index) in boards" :key="index">
-                <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
-                  <v-img width="100%" height="50px" contain :src="i.thumb"></v-img>
-                </v-col>
-                <v-col class="py-3" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.6);" cols="8">
-                    <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap; cursor:pointer;" class="newsSubText">{{i.title}}</p>
-                </v-col>
-                <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
-                    <p class="newsSubText">{{i.regTime.slice(0,10)}}</p>
-                </v-col>
-            </v-row>
-          </div>
-        </v-col>
-      </v-row> -->
-    </v-container>
+        </div>
+        <!-- <v-row>
+          <v-col class="d-flex justify-center" cols="12">
+            <p class="titleText">NEWS</p>
+          </v-col>
+          <v-col class="d-flex justify-center" cols="12">
+            <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
+              <v-row no-gutters>
+                  <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
+                  </v-col>
+                  <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="8">
+                      <p style="color:black;" class="subText">제목</p>
+                  </v-col>
+                  <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
+                      <p style="color:black;" class="subText">날짜</p>
+                  </v-col>
+              </v-row>
+              <v-row no-gutters v-for="(i,index) in boards" :key="index">
+                  <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
+                    <v-img width="100%" height="50px" contain :src="i.thumb"></v-img>
+                  </v-col>
+                  <v-col class="py-3" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.6);" cols="8">
+                      <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap; cursor:pointer;" class="newsSubText">{{i.title}}</p>
+                  </v-col>
+                  <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
+                      <p class="newsSubText">{{i.regTime.slice(0,10)}}</p>
+                  </v-col>
+              </v-row>
+            </div>
+          </v-col>
+        </v-row> -->
+      </v-container>
     </v-img>
   </v-carousel-item>
 </v-carousel>
 
 <v-dialog v-model="dialog" width="100%" height="100%">
-  <div class="d-flex align-center" style="position:fixed; z-index:2; background-color:rgba(0,0,0,.8); height:50px; width: calc(100% - 58px);">
-    <v-row class="d-flex align-center" no-gutters>
-      <v-col cols="12" class="d-flex justify-center">
+  <div class="d-flex align-center" style="position:fixed; z-index:203; background-color:rgba(0,0,0,.8); height:50px; width: calc(100% - 58px);">
+      <div style="position:absolute; z-index:204; width:100%; height:100%; top:0;" class="d-flex justify-center align-center">
           <v-tooltip v-if="!this.$vuetify.breakpoint.smAndDown" bottom>
             <template v-slot:activator="{ on, attrs }">
               <span  v-bind="attrs" v-on="on" style="z-index:99;" class="newsTitleText">
@@ -87,16 +108,15 @@
             </template>
             <span>{{output.title}}</span>
           </v-tooltip>
-      </v-col>
-      <v-col class="d-flex justify-end" style="position:absolute;" cols="12">
+      </div>
+      <div class="d-flex justify-end align-center" style="position:absolute; z-index:205; width:100%; height:100%; top:0;">
         <v-btn @click="dialog=false" icon>
           <v-icon class="mr-5" style="color:white; z-index:100;">mdi-close-thick</v-icon>
         </v-btn>
-      </v-col>
-    </v-row>
+      </div>
   </div>
       <v-card :style="{paddingRight:newsContainer,paddingLeft:newsContainer}" style="padding-top:60px; padding-bottom:60px;" width="100%" elevation="0">
-        <TipTapView :output="output"/>
+        <JoditView :output="output"/>
       </v-card>
 </v-dialog>
 
@@ -106,10 +126,10 @@
 <script>
 import bus from '@/utils/bus.js'
 import axios from 'axios'
-import TipTapView from '@/components/TipTap/TipTapView.vue'
+import JoditView from '@/components/Jodit/JoditView.vue'
 export default {
   components:{
-    TipTapView,
+    JoditView,
   },
   data(){
     return{
@@ -168,42 +188,20 @@ export default {
       }
     },
     findThumb(){
-      for(let i=0; i<this.boards.length; i++){
-        let success = false;
-        let c = this.boards[i].contents.content;
-        for(let o=0; o<c.length; o++){
-          if(c[o].content!=undefined&&success===false){
-            let cc = c[o].content;
-            for(let p=0; p<cc.length; p++){
-              if(cc[p].type==='image'){
-                this.boards[i].thumb = cc[p].attrs.src;
-                success = true;
-              }
-            }
-          }
+      for(var i = 0; i<this.boards.length; i++){
+        if(this.boards[i].contents.includes('<img')){
+          var tagIndex = this.boards[i].contents.indexOf('<img');
+          var tagSrcIndex = this.boards[i].contents.indexOf('src="',tagIndex+4);
+          var tagEndIndex = this.boards[i].contents.indexOf('"',tagSrcIndex+5);
+          this.boards[i].thumb = this.boards[i].contents.slice(tagSrcIndex+5,tagEndIndex);
         }
       }
     },
     findPretext(){
-      for(let i=0; i<this.boards.length; i++){
-        this.boards[i].pretext='';
-        let success = false;
-        let c = this.boards[i].contents.content;
-        for(let o=0; o<c.length; o++){
-          if(c[o].content!=undefined&&success===false){
-            let cc = c[o].content;
-            for(let p=0; p<cc.length; p++){
-              if(cc[p].type==='text'){
-                if(this.boards[i].pretext.trim().length < 200)this.boards[i].pretext = this.boards[i].pretext + ' ' + cc[p].text;
-                if(this.boards[i].pretext.trim().length > 199 ){
-                  success = true;
-                  break;
-                }
-              }
-            }
-          }
-        }
+      for(var i = 0; i<this.boards.length; i++){
+        this.boards[i].pretext = this.boards[i].contents.replace(/(<([^>]+)>|&nbsp;)/ig," ").slice(0,50)+('...');
       }
+
     },
     findBoards(){
       axios.get('api/board/find')
@@ -258,14 +256,26 @@ export default {
 
 
 <style scoped>
+.hovercard {
+  transition: opacity .4s ease-in-out;
+  opacity: .7;
+}
+
+.hovercard:not(.on-hover) {
+  opacity: 1;
+}
+
 @import url("../assets/css/unify.css");
+img{
+  max-width: 100% !important;
+}
 .listTitleText{
     color:#0c43b7;
     font-family: 'Noto Sans KR', sans-serif;
     font-size:16px;
 }
 .listSubText{
-    color:black;
+    color:grey;
     font-family: 'Noto Sans KR', sans-serif;
     font-size:14px;
 }

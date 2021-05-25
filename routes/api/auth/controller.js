@@ -71,7 +71,7 @@ exports.login = (req, res) => {
                         secret, 
                         {
                             expiresIn: '7d',
-                            issuer: 'allground.net',
+                            // issuer: 'allground.net',
                             subject: 'userInfo'
                         }, (err, token) => {
                             if (err) reject(err)
@@ -112,7 +112,6 @@ exports.check = (req, res) => {
 }
 
 exports.logout = (req, res) => {
-    console.log(req.session);
     if(req.session){
         req.session.destroy((err)=>{
             if(err){

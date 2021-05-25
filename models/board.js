@@ -10,7 +10,7 @@ const Boards = new Schema({
         required : true
     },
     contents:{
-        type: Object,
+        type: String,
         required : true
     },
     regTime:{

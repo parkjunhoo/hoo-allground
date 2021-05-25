@@ -11,8 +11,9 @@
                 down:()=>{return false;},
                 up:()=>{return false;}
                 }"
+                light
                  v-model="carouselIndex" height="100%" hide-delimiters :show-arrows="false">
-
+                    
                     <v-carousel-item transition="fade-transition" reverse-transition="fade-transition">
                         <div class="black" style="height:100%;">
                             <v-container class="viewContainer">
@@ -49,25 +50,17 @@
                     </v-carousel-item>
 
                     <v-carousel-item transition="fade-transition" reverse-transition="fade-transition">
-                        <div class="scrollDiv black" style="height:100%;">
-                            <v-container class="viewContainer d-flex">
-                                <v-row>
-                                    <v-col cols="12">
-                                        <TipTapEdit :output.sync="output" @carouselMove="carouselMove" />
-                                    </v-col>
-                                </v-row>
+                        <div class="black" style="height:100%;">
+                            <v-container class="viewContainer">
+                                <JoditEdit :output.sync="output" @carouselMove="carouselMove" />
                             </v-container>
                         </div>
                     </v-carousel-item>
 
                     <v-carousel-item transition="fade-transition" reverse-transition="fade-transition">
-                        <div class="scrollDiv black" style="height:100%;">
-                            <v-container class="viewContainer d-flex">
-                                <v-row>
-                                    <v-col cols="12">
-                                        <TipTapWrite @carouselMove="carouselMove" />
-                                    </v-col>
-                                </v-row>
+                        <div class="black" style="height:100%;">
+                            <v-container class="viewContainer">
+                                <JoditWrite @carouselMove="carouselMove"/>
                             </v-container>
                         </div>
                     </v-carousel-item>
@@ -94,14 +87,14 @@
 import bus from '@/utils/bus.js'
 import axios from 'axios'
 import AdminDrawer from '@/components/Admin/AdminDrawer.vue'
-import TipTapEdit from '@/components/TipTap/TipTapEdit.vue'
-import TipTapWrite from '@/components/TipTap/TipTapWrite.vue'
+import JoditWrite from '@/components/Jodit/JoditWrite.vue'
+import JoditEdit from '@/components/Jodit/JoditEdit.vue'
 
 export default {
     components:{
         AdminDrawer,
-        TipTapEdit,
-        TipTapWrite,
+        JoditWrite,
+        JoditEdit,
     },
     data(){
         return{

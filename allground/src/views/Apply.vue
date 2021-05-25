@@ -324,9 +324,19 @@
     <v-dialog
       v-model="dialog"
       persistent
-      width="50vw"
+      width="50%"
     >
-      <v-card class="yellow darken-3" elevation="0" width="50vw">
+      <div class="d-flex align-center" style="position:fixed; z-index:203; background-color:rgba(0,0,0,.8); height:50px; width:50%;">
+        <div style="position:absolute; z-index:204; width:100%; height:100%; top:0;" class="d-flex justify-center align-center">
+          <p class="newsTitleText">정답을 골라주세요</p>
+        </div>
+        <div class="d-flex justify-end align-center" style="position:absolute; z-index:205; width:100%; height:100%; top:0;">
+          <v-btn @click="dialog=false" icon>
+            <v-icon class="mr-5" style="color:white; z-index:100;">mdi-close-thick</v-icon>
+          </v-btn>
+        </div>
+      </div>
+      <v-card style="padding-top:60px;" class="yellow darken-3" elevation="0" width="50vw">
         <p style="text-align:center">정답을 골라주세요!!</p>
         <p style="text-align:center">{{q0}} + {{q1}} = ???</p>
 

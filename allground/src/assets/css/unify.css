@@ -62,6 +62,7 @@ textarea::-webkit-scrollbar-track {
     box-shadow: inset 0px 0px 5px white !important;
 }
 
+
 .scrollDiv::-webkit-scrollbar {
     width: 7px !important;
 }

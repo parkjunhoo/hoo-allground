@@ -28,9 +28,16 @@
 
 <script>
 import bus from '@/utils/bus.js'
+import axios from 'axios'
+axios.defaults.headers['Pragma'] = 'no-cache';
 export default {
   mounted() {
     this.$store.commit('set_showTipMessage',false);
+    axios.get('api/auth/check')
+    .then((res)=>{
+      if(res.data.success===true) this.logged=true;
+      else this.logged=false;
+    })
     this.$nextTick(()=>{
       setTimeout( ()=>{bus.$emit('end:loading')},0 );
     });
@@ -39,21 +46,53 @@ export default {
     return{
       id:'',
       password:'',
+      logged:false,
     }
   },
   methods:{
+    test(){
+      axios.get('api/auth/check').then((res)=>{
+        console.log(res.data);
+      })
+    },
     clickLogin(){
-      this.$store.dispatch('post_auth_login',{id:this.id,password:this.password});
+      axios.post('api/auth/login',{
+        id:this.id,
+        password:this.password
+      })
+      .then((res)=>{
+          if(res.data==='already_logged_in'){
+              alert('이미 로그인 되어있습니다.');
+              this.logged = true;
+              return;
+          }
+          if(res.data==='logged_in'){
+              alert('로그인 되었습니다.');
+              this.logged = true;
+              location.replace('/admin');
+              return;
+          }
+          if(res.data==='not_password'){
+              alert('비밀번호가 틀립니다.');
+              this.logged = false;
+              return;
+          }
+          alert('아이디를 다시 확인해주세요.');
+          this.logged = false;
+      })
     },
     clickLogout(){
-      this.$store.dispatch('get_auth_logout');
+      axios.get('api/auth/logout')
+      .then((res)=>{
+        console.log(res.data);
+        if(res.data==='logged_out'){
+            alert('로그아웃 되었습니다.');
+            this.logged = false;
+        }
+    })
     },
   },
   computed:{
-    logged(){
-      this.$store.dispatch('get_auth_check');
-      return this.$store.state.Auth.logged;
-    },
   },
 }
 </script>

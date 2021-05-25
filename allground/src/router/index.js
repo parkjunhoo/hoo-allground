@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import bus from '../utils/bus'
 import axios from 'axios'
-
+axios.defaults.headers['Pragma'] = 'no-cache';
 Vue.use(VueRouter)
 
 const routes = [
@@ -77,6 +77,7 @@ const routes = [
       bus.$emit('start:loading');
       axios.get('api/auth/check')
       .then((res)=>{
+        console.log(res.data);
         if(res.data==='not_logged'||res.data==='not_admin')
         {
           alert('권한이 없습니다.');

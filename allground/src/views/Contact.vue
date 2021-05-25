@@ -181,17 +181,15 @@
 
 
     <v-dialog persistent v-model="dialog" width="50%">
-      <div class="d-flex align-center" style="position:fixed; z-index:2; background-color:rgba(0,0,0,.8); height:50px; width:50%;">
-        <v-row class="d-flex align-center" no-gutters>
-          <v-col cols="12">
-            <p style="text-align:center;" class="newsTitleText">문제를 풀어주세요!</p>
-          </v-col>
-          <v-col class="d-flex justify-end" style="position:absolute;" cols="12">
-            <v-btn @click="dialog=false" icon>
-              <v-icon class="mr-5" style="color:white; z-index:100;">mdi-close-thick</v-icon>
-            </v-btn>
-          </v-col>
-        </v-row>
+      <div class="d-flex align-center" style="position:fixed; z-index:203; background-color:rgba(0,0,0,.8); height:50px; width:50%;">
+        <div style="position:absolute; z-index:204; width:100%; height:100%; top:0;" class="d-flex justify-center align-center">
+          <p class="newsTitleText">정답을 골라주세요</p>
+        </div>
+        <div class="d-flex justify-end align-center" style="position:absolute; z-index:205; width:100%; height:100%; top:0;">
+          <v-btn @click="dialog=false" icon>
+            <v-icon class="mr-5" style="color:white; z-index:100;">mdi-close-thick</v-icon>
+          </v-btn>
+        </div>
       </div>
       <v-card style="padding-top:60px;" elevation="0" width="50vw">
         <p style="text-align:center">정답을 골라주세요!!</p>

@@ -1484,6 +1484,11 @@
     "@types/webpack-sources" "*"
     source-map "^0.6.0"
 
+"@ungap/global-this@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@ungap/global-this/-/global-this-0.4.4.tgz#8a1b2cfcd3e26e079a847daba879308c924dd695"
+  integrity sha512-mHkm6FvepJECMNthFuIgpAEFmPOk71UyXuIxYfjytvFTnSDBIz7jmViO+LfHI/AjrazWije0PnSP3+/NlwzqtA==
+
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.2.1.tgz#31624a7a505fb14da1d58023725a4c5f270e6a81"
@@ -2215,6 +2220,11 @@ atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+
+autobind-decorator@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/autobind-decorator/-/autobind-decorator-2.4.0.tgz#ea9e1c98708cf3b5b356f7cf9f10f265ff18239c"
+  integrity sha512-OGYhWUO72V6DafbF8PM8rm3EPbfuyMZcJhtm5/n26IDwO18pohE4eNazLoCGhPiXOCD0gEGmrbU3849QvM8bbw==
 
 autoprefixer@^9.8.6:
   version "9.8.6"
@@ -5580,6 +5590,21 @@ jest-worker@^25.4.0:
   dependencies:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jodit-vue@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/jodit-vue/-/jodit-vue-2.4.0.tgz#f370fe3217a2a116ebd6fb0dcc1d95f533704556"
+  integrity sha512-l7n/THVYwhUm5nE0CGb2Zw96yH0bVgDOzPaNHe2QR/Z/AM4mp/XUzjxQCDIdTgEU/LU4hCiyGh/vqyj+K+En2w==
+  dependencies:
+    "@ungap/global-this" "^0.4.4"
+    jodit "^3.6.8"
+
+jodit@^3.6.8:
+  version "3.6.17"
+  resolved "https://registry.yarnpkg.com/jodit/-/jodit-3.6.17.tgz#98afd0475025c9a7e97501468ed0050c3e948c98"
+  integrity sha512-zwmh71xJYzF+yiwltNgG+RrwQ5rXtbe1r2TiwtBbv8AxbMj3pqQYxw1VqKQRxKEr7FQMR0qAhP44Bel6m8pvOg==
+  dependencies:
+    autobind-decorator "^2.4.0"
 
 js-base64@^2.1.8:
   version "2.6.4"

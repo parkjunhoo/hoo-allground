@@ -1,5 +1,6 @@
 import axios from 'axios'
 import router from '../../../router';
+axios.defaults.headers['Pragma'] = 'no-cache';
 export default {
     state:{
         logged:false,

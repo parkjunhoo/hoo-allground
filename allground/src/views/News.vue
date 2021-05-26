@@ -25,12 +25,20 @@
           <v-col cols="12">
             <v-row class="d-flex justify-end">
               <v-col cols="10" sm="12" md="6" lg="6" xl="6">
-                <v-text-field hide-details v-model="search" label="검색" solo-inverted></v-text-field>
+                <v-text-field @keypress.enter="clickSearch" hide-details v-model="search" label="검색" solo-inverted></v-text-field>
               </v-col>
               <v-col class="d-flex" cols="auto">
+                <v-btn-toggle background-color="transparent" class="mx-3 d-flex align-end" v-model="boardType" mandatory>
+                  <v-btn small :value="0">
+                    <v-icon small>mdi-bulletin-board</v-icon>
+                  </v-btn>
+                  <v-btn small :value="1">
+                    <v-icon small>mdi-format-align-center</v-icon>
+                  </v-btn>
+                </v-btn-toggle>
                 <v-checkbox class="mx-1" v-model="titleCheck" label="제목" color="success" hide-details></v-checkbox>
                 <v-checkbox class="mx-1" v-model="contentCheck" label="내용" color="success" hide-details></v-checkbox>
-                <v-btn class="mx-3" @click="clickSearch" color="green" dark large><v-icon>mdi-magnify</v-icon></v-btn>
+                <v-btn small class="mx-3 align-self-end" @click="clickSearch" color="green" dark large><v-icon small>mdi-magnify</v-icon></v-btn>
               </v-col>
             </v-row>
           </v-col>
@@ -38,73 +46,73 @@
       </div>
       
     </v-container>
-      <v-container class="viewContainer d-flex justify-center align-start" style="padding-top:5px;">
-        <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
-          <v-row no-gutters>
-            <v-col class="mt-5" v-for="(i,index) in boardsResult" :key="index" cols="12" sm="12" md="4" lg="3" xl="3">
-              <v-card width="90%" class="mx-auto mt-5" color="rgba(22,22,22,.4)" elevation="10">
-                <v-row no-gutter>
+
+    <v-container class="viewContainer d-flex justify-center align-start" style="padding-top:5px;">
+      <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
+        <v-row v-if="boardType===0" no-gutters>
+          <v-col class="mt-5" v-for="(i,index) in boardsResult" :key="index" cols="12" sm="12" md="4" lg="3" xl="3">
+            <v-card width="90%" class="mx-auto mt-5" color="rgba(22,22,22,.4)" elevation="10">
+              <v-row no-gutter>
 
 
-                  <v-col class="d-flex align-center" cols="12">
-                    <v-hover v-slot="{ hover }">
-                      <v-card class="hovercard" :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
-                        <v-card width="100%" height="25vh">
-                          <v-img style="cursor:pointer;" @click="clickTitle(index)" width="100%" height="100%" :src="i.thumb" >
-                            <div @click="clickTitle(index)" v-if="hover" class="d-flex justify-center align-center" style="width:100%; height:100%; background-color:rgba(0,0,0,.8); cursor:pointer;">
-                              <p class="titleSubText">전체보기 <v-icon x-large>mdi-fullscreen</v-icon></p>
-                            </div>
-                          </v-img>
-                        </v-card>
+                <v-col class="d-flex align-center" cols="12">
+                  <v-hover v-slot="{ hover }">
+                    <v-card class="hovercard" :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
+                      <v-card width="100%" height="25vh">
+                        <v-img style="cursor:pointer;" @click="clickTitle(index)" width="100%" height="100%" :src="i.thumb" >
+                          <div @click="clickTitle(index)" v-if="hover" class="d-flex justify-center align-center" style="width:100%; height:100%; background-color:rgba(0,0,0,.8); cursor:pointer;">
+                            <p class="titleSubText">전체보기 <v-icon x-large>mdi-fullscreen</v-icon></p>
+                          </div>
+                        </v-img>
                       </v-card>
-                    </v-hover>
-                  </v-col>
+                    </v-card>
+                  </v-hover>
+                </v-col>
 
-                  <v-col class="pa-3" cols="12">
-                    <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; cursor:pointer;" class="listTitleText">{{i.title}}</p>
-                  </v-col>
-                  <v-col class="pa-3" cols="12">
-                    <p class="listSubText">{{i.regTime.slice(0,10)}}</p>
-                  </v-col>
-                  <v-col class="pa-3 d-flex align-center" cols="12">
-                    <p class="listSubText align-self-start px-2">{{i.pretext}}</p>
-                  </v-col>
-                </v-row>
-              </v-card>
-            </v-col>
-          </v-row>
-        </div>
-        <!-- <v-row>
-          <v-col class="d-flex justify-center" cols="12">
-            <p class="titleText">NEWS</p>
-          </v-col>
-          <v-col class="d-flex justify-center" cols="12">
-            <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
-              <v-row no-gutters>
-                  <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
-                  </v-col>
-                  <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="8">
-                      <p style="color:black;" class="subText">제목</p>
-                  </v-col>
-                  <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
-                      <p style="color:black;" class="subText">날짜</p>
-                  </v-col>
+                <v-col class="pa-3" cols="12">
+                  <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; cursor:pointer;" class="listTitleText">{{i.title}}</p>
+                </v-col>
+                <v-col class="pa-3" cols="12">
+                  <p class="listSubText">{{i.regTime.slice(0,10)}}</p>
+                </v-col>
+                <v-col class="pa-3 d-flex align-center" cols="12">
+                  <p class="listSubText align-self-start px-2">{{i.pretext}}</p>
+                </v-col>
               </v-row>
-              <v-row no-gutters v-for="(i,index) in boards" :key="index">
-                  <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
-                    <v-img width="100%" height="50px" contain :src="i.thumb"></v-img>
-                  </v-col>
-                  <v-col class="py-3" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.6);" cols="8">
-                      <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap; cursor:pointer;" class="newsSubText">{{i.title}}</p>
-                  </v-col>
-                  <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
-                      <p class="newsSubText">{{i.regTime.slice(0,10)}}</p>
-                  </v-col>
-              </v-row>
-            </div>
+            </v-card>
           </v-col>
-        </v-row> -->
-      </v-container>
+        </v-row>
+
+        <v-row no-gutters v-if="boardType===1">
+        <v-col class="d-flex justify-center" cols="12">
+          <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
+            <v-row no-gutters>
+                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
+                </v-col>
+                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="8">
+                    <p style="color:black;" class="subText">제목</p>
+                </v-col>
+                <v-col class="py-5" style="background-color:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
+                    <p style="color:black;" class="subText">날짜</p>
+                </v-col>
+            </v-row>
+            <v-row no-gutters v-for="(i,index) in boardsResult" :key="index">
+                <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
+                  <v-img width="100%" height="50px" contain :src="i.thumb"></v-img>
+                </v-col>
+                <v-col class="py-3" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.6);" cols="8">
+                    <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap; cursor:pointer;" class="newsSubText">{{i.title}}</p>
+                </v-col>
+                <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
+                    <p class="newsSubText">{{i.regTime.slice(0,10)}}</p>
+                </v-col>
+            </v-row>
+          </div>
+        </v-col>
+        </v-row>
+      </div>
+
+    </v-container>
     </v-img>
   </v-carousel-item>
 </v-carousel>
@@ -154,6 +162,7 @@ export default {
   data(){
     return{
       search:'',
+      boardType: 0,
       titleCheck: true,
       contentCheck: false,
       dialog:false,

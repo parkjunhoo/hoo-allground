@@ -15,8 +15,8 @@
     :vertical-delimiters="delimitersLocation"
   >
   <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
-    <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.7), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/news/3.jpg">
-    <v-container class="viewContainer d-flex justify-center" style="height:fit-content; padding-botton:5px;">
+    <v-img class="viewContainer" gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.7), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/news/3.jpg">
+    <v-container class="d-flex justify-center" style="padding-botton:5px;">
       <div :style="{width:listContainer}">
         <v-row class="d-flex justify-center">
           <v-col class="d-flex justify-center" cols="12">
@@ -47,7 +47,7 @@
       
     </v-container>
 
-    <v-container class="viewContainer d-flex justify-center align-start" style="padding-top:5px;">
+    <v-container class="d-flex justify-center align-start" style="padding-top:5px;">
       <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
         <v-row v-if="boardType===0" no-gutters>
           <v-col class="mt-5" v-for="(i,index) in boardsResult" :key="index" cols="12" sm="12" md="4" lg="3" xl="3">
@@ -57,7 +57,7 @@
 
                 <v-col class="d-flex align-center" cols="12">
                   <v-hover v-slot="{ hover }">
-                    <v-card class="hovercard" :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
+                    <v-card width="100%" class="hovercard" :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
                       <v-card width="100%" height="25vh">
                         <v-img style="cursor:pointer;" @click="clickTitle(index)" width="100%" height="100%" :src="i.thumb" >
                           <div @click="clickTitle(index)" v-if="hover" class="d-flex justify-center align-center" style="width:100%; height:100%; background-color:rgba(0,0,0,.8); cursor:pointer;">

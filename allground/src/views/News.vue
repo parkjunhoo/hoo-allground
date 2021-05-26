@@ -5,6 +5,7 @@
     height="100%"
     :show-arrows="false"
     hide-delimiter-background
+    hide-delimiters
     delimiter-icon="mdi-soccer black rounded-xl"
     v-model="carouselIndex"
     :touch="{
@@ -16,12 +17,31 @@
   <v-carousel-item @mousewheel="carouselScroll" :reverse-transition="reverseTransition" :transition="Transition">
     <v-img gradient="to bottom, rgba(0,0,0,1),rgba(0,0,0,.7), rgba(0,0,0,1)" width="100%" height="100%" cover src="@/assets/news/3.jpg">
     <v-container class="viewContainer d-flex justify-center" style="height:fit-content; padding-botton:5px;">
-      <p class="titleText">News</p>
+      <div :style="{width:listContainer}">
+        <v-row class="d-flex justify-center">
+          <v-col class="d-flex justify-center" cols="12">
+            <p class="titleText">News</p>
+          </v-col>
+          <v-col cols="12">
+            <v-row class="d-flex justify-end">
+              <v-col cols="10" sm="12" md="6" lg="6" xl="6">
+                <v-text-field hide-details v-model="search" label="검색" solo-inverted></v-text-field>
+              </v-col>
+              <v-col class="d-flex" cols="auto">
+                <v-checkbox class="mx-1" v-model="titleCheck" label="제목" color="success" hide-details></v-checkbox>
+                <v-checkbox class="mx-1" v-model="contentCheck" label="내용" color="success" hide-details></v-checkbox>
+                <v-btn class="mx-3" @click="clickSearch" color="green" dark large><v-icon>mdi-magnify</v-icon></v-btn>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </div>
+      
     </v-container>
       <v-container class="viewContainer d-flex justify-center align-start" style="padding-top:5px;">
         <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
           <v-row no-gutters>
-            <v-col class="mt-5" v-for="(i,index) in boards" :key="index" cols="12" sm="12" md="4" lg="3" xl="3">
+            <v-col class="mt-5" v-for="(i,index) in boardsResult" :key="index" cols="12" sm="12" md="4" lg="3" xl="3">
               <v-card width="90%" class="mx-auto mt-5" color="rgba(22,22,22,.4)" elevation="10">
                 <v-row no-gutter>
 
@@ -133,10 +153,14 @@ export default {
   },
   data(){
     return{
+      search:'',
+      titleCheck: true,
+      contentCheck: false,
       dialog:false,
       carouselIndex:0,
       scrollReady:2,
       boards:null,
+      boardsResult:null,
       output:{id:null,title:null,contents:null},
     }
   },
@@ -173,7 +197,44 @@ export default {
       setTimeout( ()=>{bus.$emit('end:loading')},1000 ); // 로딩이 끝났다는걸 알려주기위한 마운트 된 후 비동기처리 셋타이머 ms인자 500때문에 기본딜레이 500잇음 0하면 페이지 마운트후 로딩) //
     });
   },
+  watch:{
+  },
   methods:{
+    clickSearch(){
+      if(this.search.trim===''){
+        this.boardsResult = this.boards;
+        return;
+      }
+      if(this.titleCheck===false&&this.contentCheck===false){
+        alert('제목 또는 내용을 선택해주세요.')
+        return;
+      }
+      if(this.titleCheck&&this.contentCheck)
+      {
+        this.boardsResult = 
+        this.boards.filter (x => {
+          return x.title.toLowerCase().includes(this.search.toLowerCase()) || x.contents.replace(/(<([^>]+)>|&nbsp;)/ig," ").toLowerCase().includes(this.search.toLowerCase())
+        })
+        return;
+      }
+      if(this.titleCheck)
+      {
+        this.boardsResult = 
+        this.boards.filter (x => {
+          return x.title.toLowerCase().includes(this.search.toLowerCase())
+        })
+        return;
+      }
+      if(this.contentCheck)
+      {
+        this.boardsResult = 
+        this.boards.filter (x => {
+          return x.contents.replace(/(<([^>]+)>|&nbsp;)/ig," ").toLowerCase().includes(this.search.toLowerCase())
+        })
+        return;
+      }
+
+    },
     clickTitle(i){
       this.output.id = this.boards[i]._id;
       this.output.title =  this.boards[i].title;
@@ -209,6 +270,7 @@ export default {
         this.boards=res.data;
         this.findThumb();
         this.findPretext();
+        this.boardsResult=this.boards;
       })
     },
 

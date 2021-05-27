@@ -8,6 +8,11 @@
 .v-carousel__controls__item{
     margin:0 !important;
 }
+.v-dialog{
+    overflow-y: visible;
+    margin:0;
+}
+/* 
 .v-dialog::-webkit-scrollbar {
     width: 10px !important;
 }
@@ -33,7 +38,7 @@
     background-color: white !important;
     border-radius: 10px !important;
     box-shadow: inset 0px 0px 5px white !important;
-}
+} */
 
 textarea::-webkit-scrollbar {
     width: 10px !important;

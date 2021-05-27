@@ -158,7 +158,7 @@
     <p style="color:white;">메인</p>
   </v-container> -->
     <v-dialog v-model="dialog" width="100%" height="100%">
-      <div class="d-flex align-center" style="position:fixed; z-index:203; background-color:rgba(0,0,0,.8); height:50px; width:calc(100% - 58px);">
+      <div class="d-flex align-center" style="position:fixed; z-index:203; background-color:rgba(0,0,0,.8); height:50px; width:100%;">
         <div style="position:absolute; z-index:204; width:100%; height:100%; top:0;" class="d-flex justify-center align-center">
           <p class="newsTitleText">Our Partner</p>
         </div>
@@ -168,8 +168,8 @@
           </v-btn>
         </div>
       </div>
-      <v-card class="overflow-hidden" rounded="0" style="position:relative; padding-top:60px;" color="rgba(255,255,255,1)" elevation="0" width="100%" height="100%">
-        <v-row>
+      <v-card class="scrollDiv" rounded="0" style="position:relative; padding-top:10px; top:50px;" color="rgba(255,255,255,1)" elevation="0" width="100%" height="80vh">
+        <v-row no-gutters>
           <v-col v-for="i in mouImg" :key="i.title" class="d-flex align-center justify-center" cols="12" sm="12" md="6" lg="6" xl="6">
             <v-card rounded="0"  elevation="0" class="transparent"  height="100px" width="100px"><v-img height="100%" width="100%" contain :src="i.src" ></v-img></v-card>
           </v-col>

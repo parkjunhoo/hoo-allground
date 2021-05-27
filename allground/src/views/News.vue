@@ -87,7 +87,7 @@
         <v-col class="d-flex justify-center" cols="12">
           <div :style="{width:listContainer}" class="scrollDiv" style="height:65vh; background-color:rgba(0,0,0,.2);">
             <v-row no-gutters>
-                <v-col class="py-1" style="background-color:rgba(255,255,255,.3); border-bottom:1px solid rgba(0,0,0,.6);" cols="2">
+                <v-col class="py-1" style="background-color:rgba(255,255,255,.3); border-bottom:1px solid rgba(0,0,0,.6);" cols="2" xl="1" lg="1">
                 </v-col>
                 <v-col class="py-1" style="background-color:rgba(255,255,255,.3); border-bottom:1px solid rgba(0,0,0,.6);" cols="8">
                     <p style="color:white;" class="subText">제목</p>
@@ -97,11 +97,11 @@
                 </v-col>
             </v-row>
             <v-row no-gutters v-for="(i,index) in boardsResult" :key="index">
-                <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
+                <v-col class="py-3" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2" xl="1" lg="1">
                   <v-img width="100%" height="50px" :src="i.thumb"></v-img>
                 </v-col>
-                <v-col class="py-3 d-flex align-center justify-center" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.6);" cols="8">
-                    <p @click="clickTitle(index)" style="overflow:hidden; text-overflow: ellipsis; white-space:nowrap; cursor:pointer;" class="listTitleText">{{i.title}}</p>
+                <v-col class="py-3 d-flex align-center" style="background-color:rgba(0,0,0,.6); border-bottom:1px solid rgba(255,255,255,.6);" cols="8">
+                    <p @click="clickTitle(index)" :style="{left:listTitleLeft}" style="position:relative; overflow:hidden; text-overflow: ellipsis; white-space:nowrap; cursor:pointer;" class="listTitleText">{{i.title}}</p>
                 </v-col>
                 <v-col class="py-3 d-flex align-center justify-center" style="background-color:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.4);" cols="2">
                     <p class="newsSubText">{{i.regTime.slice(0,10)}}</p>
@@ -174,6 +174,16 @@ export default {
     }
   },
   computed:{
+    listTitleLeft(){
+      switch(this.$vuetify.breakpoint.name){
+        case 'xs' : return '0%';
+        case 'sm' : return '0%';
+        case 'md' : return '0%';
+        case 'lg' : return '25%';
+        case 'xl' : return '25%';
+        default : return '100%';
+      }
+    },
     listContainer(){
       switch(this.$vuetify.breakpoint.name){
         case 'xs' : return '100%';

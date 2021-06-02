@@ -11,9 +11,17 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import VueAnalytics from 'vue-analytics'
 
 Vue.config.productionTip = false
 Vue.use(JoditVue)
+Vue.use(VueAnalytics, {
+  id: 'G-W03KTZG3B7',
+  router,
+  autoTracking: {
+    pageviewOnLoad: false
+  }
+})
 new Vue({
   created(){
     AOS.init();

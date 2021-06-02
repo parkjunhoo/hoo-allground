@@ -141,9 +141,11 @@
             </v-col>
             <v-col cols="12" class="pa-0" style="position:relative;">
               <div @click="dialog=true" style="height:70px; width:100%; position:absolute; left:0; cursor:zoom-in;">
-                <div class="d-flex mx-auto" style="height:70px; width:700px; overflow:hidden;">
+                <div class="d-flex mx-auto" style="height:70px; width:700px; overflow:hidden; position:relative;">
+                  <div class="d-flex mx-auto" style="height:70px; width:1100px; overflow:hidden; position:absolute;">
                     <v-img class="flow" width="70px" height="70px" style="margin: 0 15px;" contain v-for="(i,index) in mouImg" :key="index" :src="i"></v-img>
                     <v-img class="flow" width="70px" height="70px" style="margin: 0 15px;" contain v-for="i in mouImg" :key="i.link" :src="i"></v-img>
+                  </div>
                 </div>
               </div>
             </v-col>
@@ -189,9 +191,13 @@ export default {
       scrollReady:2,
       mouImg:[
         // {src:require('@/assets/main/mou/kfa.png'),title:'대한축구협회',link:'https://www.kfa.or.kr/'},
-        {src:require('@/assets/main/mou/J&M.png'),title:'J&M 풋볼 매니지먼트',link:'none'},
-        {src:require('@/assets/main/mou/PTA.png'),title:'PTA',link:'none2'},
-        {src:require('@/assets/main/mou/라틴아메리카.png'),title:'라틴아메리칸 스포츠 매니지먼트',link:'none3'},
+        {src:require('@/assets/main/mou/서울특별시.png'),title:'서울특별시',link:'none1'},
+        {src:require('@/assets/main/mou/광진구.png'),title:'광진구',link:'none'},
+        {src:require('@/assets/main/mou/세종대.png'),title:'세종대학교',link:'none2'},
+        {src:require('@/assets/main/mou/부산풋볼클럽.png'),title:'부산풋볼클럽',link:'none3'},
+        {src:require('@/assets/main/mou/J&M.png'),title:'J&M 풋볼 매니지먼트',link:'none4'},
+        {src:require('@/assets/main/mou/PTA.png'),title:'PTA',link:'none5'},
+        {src:require('@/assets/main/mou/라틴아메리카.png'),title:'라틴아메리칸 스포츠 매니지먼트',link:'none6'},
         // {src:require('@/assets/main/mou/비주얼스포츠.png'),title:'비주얼 스포츠',link:'https://www.visualsports.co.kr/'},
         {src:require('@/assets/main/mou/스톤스포츠.png'),title:'스톤 스포츠 매니지먼트',link:'https://www.stonesportsmanagement.co.uk/'},
         {src:require('@/assets/main/mou/카나스포츠.png'),title:'KANA 스프츠협회',link:'https://www.facebook.com/Kana-Acad%C3%A9mie-Jeunesse-Sportive-de-Sanoyah-118049230036779/'},

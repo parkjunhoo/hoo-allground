@@ -20,6 +20,8 @@ https://youtu.be/uyft6Z2Iat0
 이런식으로 서로 공부하면서 알게된것도 같이 공유하고 그랬다..<br>
 잘은 기억안나지만 이때 익명함수 function , 이랑 화살표함수 안에서 서로 가르키는<br>
 this의 차이때문에 문제가 발생했었던것 같다 ㅋㅋ <br>
+이때 알아둔 두 익명함수의 차이때문에 최근에도 도움이 되었다 ㅋㅋ 
+<br>
 
 ![123](https://github.com/parkjunhoo/hoo-allground/assets/56852562/241813e1-a7f4-4bc6-8f3e-a2196f7596ac)
 

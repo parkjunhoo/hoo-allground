@@ -30,3 +30,8 @@ this의 차이때문에 문제가 발생했었던것 같다 ㅋㅋ <br>
 ![zzzz](https://github.com/parkjunhoo/hoo-allground/assets/56852562/09768205-4eca-4666-b32d-9578c7e59fe2)
 
 <br>
+이때 당시에 익스플로러까지 지원하려고 하다보니까 스트레스가 진짜 너무 컸다.<br>
+(요즘 추세는 익스플로러 지원도 끊기기도 했고 고려를 안하는편인거같지만)<br>
+<br>
+![asdfasdf](https://github.com/parkjunhoo/hoo-allground/assets/56852562/5af6c8fb-c6ee-4845-8ce3-3a6c15a06faf)
+

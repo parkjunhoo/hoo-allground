@@ -65,3 +65,11 @@ this의 차이때문에 문제가 발생했었던것 같다 ㅋㅋ <br>
 
 
 <br><br><br>
+ㅋㅋ.. 이떄 당시 대표님이셨다.. <br>
+사실 말이 대표님이었지 그냥 세종대 대학생분이셨다<br>
+그만큼 형처럼 친근하게 잘 해주셨다는말이다 ㅋㅋ <br>
+
+![q123123](https://github.com/parkjunhoo/hoo-allground/assets/56852562/af031f21-8ee2-4bcf-be42-fb9ab7e0855f)
+
+
+<br><br><br>

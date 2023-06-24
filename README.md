@@ -56,3 +56,12 @@ this의 차이때문에 문제가 발생했었던것 같다 ㅋㅋ <br>
 
 <br><br><br>
 
+당시 메일보내는걸 외부서비스를 통해서 구현했는데 <br>
+유료서비스였다 ㅋㅋ.. 과금에 대한 고민도 했었네 ㅋㅋ 아무도 안쓰는데 ㅋㅋ ㅜㅜ..<br>
+당시에는 유명해져서 많이 쓸거라고 생각했었나보다 .. ㅋㅋ<br>
+<br>
+
+![sadfsdf](https://github.com/parkjunhoo/hoo-allground/assets/56852562/0a00ab2c-bf79-401f-9a75-067f3d33aced)
+
+
+<br><br><br>

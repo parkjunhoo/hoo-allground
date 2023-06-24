@@ -44,6 +44,19 @@ this의 차이때문에 문제가 발생했었던것 같다 ㅋㅋ <br>
 ![123](https://github.com/parkjunhoo/hoo-allground/assets/56852562/241813e1-a7f4-4bc6-8f3e-a2196f7596ac)
 
 
+
+
+<br><br><br>
+ㅋㅋ이때 당시에는 누구보다도 열정넘쳤던것같다..<br>
+아무래도 맨땅에 헤딩하는거였기도했고 <br>
+A to Z까지 모두 인터넷검색에 의존해서 해야됬기때문에 <br>
+밤새는게 일이었따.. 이때는 3일밤을 샜던거같다 <br>
+열정열정열정 ㅋㅋ 당시 한마음산악회가 유행하면서 우리끼리 유행어였다 ㅋㅋ <br>
+
+![asdfasdfsadfsadfqweqwe](https://github.com/parkjunhoo/hoo-allground/assets/56852562/f99bfa01-bace-49f2-8da2-e09d54e10e65)
+
+<br><br><br>
+
 <br><br> 나는 갤럭시 핸드폰밖에 없었어서 ios 환경에서는 또 <br>
 다르게 표시되거나 하는 부분들이 많았던 것 같다. <br>
 그래서 아이폰을 쓰고있는 친구에게 부탁을 해보기도 하고 ㅋㅋ<br>

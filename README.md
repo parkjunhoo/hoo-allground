@@ -22,3 +22,11 @@ https://youtu.be/uyft6Z2Iat0
 this의 차이때문에 문제가 발생했었던것 같다 ㅋㅋ <br>
 
 ![123](https://github.com/parkjunhoo/hoo-allground/assets/56852562/241813e1-a7f4-4bc6-8f3e-a2196f7596ac)
+
+
+<br><br> 나는 갤럭시 핸드폰밖에 없었어서 ios 환경에서는 또 <br>
+다르게 표시되거나 하는 부분들이 많았던 것 같다. <br>
+그래서 아이폰을 쓰고있는 친구에게 부탁을 해보기도 하고 ㅋㅋ<br>
+![zzzz](https://github.com/parkjunhoo/hoo-allground/assets/56852562/09768205-4eca-4666-b32d-9578c7e59fe2)
+
+<br>

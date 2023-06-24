@@ -35,6 +35,13 @@ this의 차이때문에 문제가 발생했었던것 같다 ㅋㅋ <br>
 ㅋㅋ 익스플로러 사파리에 대한 혐오가 생겼었다.. <br>
 <br>
 <img src="https://github.com/parkjunhoo/hoo-allground/assets/56852562/5af6c8fb-c6ee-4845-8ce3-3a6c15a06faf" />
+<br><br>
 
+크롬에선 잘뜨는데 익플에선 아예 안뜨고..  이런게 너무 많았다..
+<br>
+
+![qqqqqqqqq](https://github.com/parkjunhoo/hoo-allground/assets/56852562/cad802d5-2acc-46f4-877c-a0e5b487d33c)
+
+<br>
 
 

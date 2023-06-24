@@ -45,5 +45,14 @@ this의 차이때문에 문제가 발생했었던것 같다 ㅋㅋ <br>
 ![qqqqqqqqq](https://github.com/parkjunhoo/hoo-allground/assets/56852562/cad802d5-2acc-46f4-877c-a0e5b487d33c)
 
 <br>
+ㅋㅋㅋㅋㅋㅋㅋ이때 당시 문의하기나 지원에 메일보내는 기능을 만들었었는데 <br>
+악용을 막기위해 캡챠를 도입했었다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ<br><br>
+너무 웃기다 ㅋㅋ.. 랜덤수를 주고 계산식을 띄우고 <br>
+정답인값에 +- 해서 선택지를 뿌렸던것 같다 ㅋㅋㅋ <br>
 
+
+![개웃긴캡챠시스템](https://github.com/parkjunhoo/hoo-allground/assets/56852562/f386c1fc-7b05-44d7-86a7-9c5cf4d1ae86)
+
+
+<br><br><br>
 

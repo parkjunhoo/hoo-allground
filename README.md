@@ -34,7 +34,7 @@ this의 차이때문에 문제가 발생했었던것 같다 ㅋㅋ <br>
 (요즘 추세는 익스플로러 지원도 끊기기도 했고 고려를 안하는편인거같지만)<br>
 ㅋㅋ 익스플로러 사파리에 대한 혐오가 생겼었다.. <br>
 <br>
-![asdfasdf](https://github.com/parkjunhoo/hoo-allground/assets/56852562/5af6c8fb-c6ee-4845-8ce3-3a6c15a06faf)
+<img src="https://github.com/parkjunhoo/hoo-allground/assets/56852562/5af6c8fb-c6ee-4845-8ce3-3a6c15a06faf" />
 
 
 
